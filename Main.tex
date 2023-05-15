@@ -1,0 +1,133 @@
+\documentclass[aspectratio=169,fleqn,handout,xcolor={dvipsnames}]{beamer}
+
+\usetheme[pageofpages=of]{hubln}
+% dette dokumentet er hoveddokumentet og må kompileres
+% resten skjer i Preamble.tex
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[norsk]{babel}
+\usepackage{tabularx}
+\usepackage{hhline}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{adjustbox}
+\usepackage{minted,xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usetikzlibrary{cd}
+\usetikzlibrary{babel}
+\usepackage{relsize}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage{pifont}
+\usepackage[normalem]{ulem}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\usemintedstyle{monokai} %vs
+%\definecolor{bg}{HTML}{282828}
+\definecolor{bg}{RGB}{40, 40, 40}
+\setminted{bgcolor=black,frame=lines,
+               framesep=2mm}
+\usefonttheme{professionalfonts}
+\setbeamercovered{invisible}
+\hfuzz=8.64pt % Antioverfullbox-inator
+
+\setbeamercolor{block body alerted}{bg=alerted text.fg!10}
+\setbeamercolor{block title alerted}{bg=alerted text.fg!20}
+\setbeamercolor{block body}{bg=structure!10}
+\setbeamercolor{block title}{bg=structure!20}
+\setbeamercolor{block body example}{bg=green!10}
+\setbeamercolor{block title example}{bg=green!20}
+\setbeamertemplate{blocks}[rounded][shadow]
+
+
+\tikzset{onslide/.code args={<#1>#2}{% from https://tex.stackexchange.com/a/6155/263192
+  \only<#1>{\pgfkeysalso{#2}}
+}}
+
+\newcommand{\newLine}{%
+  \hfill\break
+}
+
+%\newcommand{\comment}[1]{}
+\tikzset{vertex/.style={draw, circle, inner sep=1mm}}
+\newcommand{\incomplete}[3][1.5cm]{\begin{tikzpicture}
+\foreach \n in {1,...,#2}{\node[vertex]at({90-360/#2*(\n-1)}:#1)(\n){\n};}
+\foreach \v/\w in {#3}{\draw(\v)--(\w);}
+\end{tikzpicture}}
+\tikzset{properties/.style={orange, ultra thick}}
+\tikzset{propertiesRed/.style={red, ultra thick}}
+\tikzset{propertiesBlue/.style={blue, ultra thick}}
+\tikzset{propertiesGrey/.style={gray, ultra thick}}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+%\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Hier die Daten zur Präsentation eintragen
+\author[ls]{Steinar Simonnes og Lena Eichhorst}
+\title[sgp]{Kræsjkurs MNF130}
+\institute{Institutt for Informatikk \\ Universitetet i Bergen}
+\date[16.05.23]{16 Mai 2023}
+
+\begin{document}
+\begin{frame}[t,plain]
+    \titlepage
+\end{frame}
+
+% table of contents (skjer automatisk)
+\section{Intro}
+\subsection*{Agenda}
+\begin{frame}
+    %\tableofcontents
+    \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={1-6}]
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={7-}]
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection*{Download PDFen}
+\begin{frame}{Last meg ned}
+    \begin{figure}
+        \centering
+        \includegraphics[height = 4.9cm]{images/bi.png}
+        \caption{ TODO: ny URL her, og ny QR-kode}
+        \label{fig:qrcode}
+    \end{figure}
+\end{frame}
+
+%===============================================
+
+%\input{Logikk}
+%\input{Mengdelære}
+%\input{Relasjoner}
+%\input{Bevis}
+\input{Tallteori}
+%\input{Sannsynlighet}
+%\input{Algoritmer}
+%\input{Grafer}
+%\input{Grafalgoritmer}
+
+%\section*{Slutt}
+\begin{frame}
+\begin{center}
+\begin{Large}
+\textbf{Lykke til på eksamen!\\[5mm]
+Takk for oss :)}
+
+\end{Large}
+\end{center}  
+\end{frame}
+\end{document}
