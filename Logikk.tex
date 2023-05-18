@@ -180,7 +180,7 @@ F & T \\ \hline
     \end{column}
     \begin{column}{0.48\textwidth}
             \pause
-            $(p \land q) \rightarrow \lnot r$ \\
+            $(p \land \lnot q) \rightarrow \lnot r$ \\
             \pause
             $\equiv \lnot (p \land \lnot q) \lor \lnot r$ \\
             \pause
@@ -267,7 +267,7 @@ def exists(p, xs):
     \begin{block}{Eksempler}
         $\forall x \forall y : (x^2 + y^2 \geq 0) = \forall x, y : (x^2 + y^2 \geq 0)$ \\
         $\forall x \exists y : (x * y = 1)$ = ''For alle x eksisterer det en y slik at $x * y = 1$'' \\
-        $\exists x \forall y : (x^2 < y^2)$ = ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
+        $\exists x \forall y : (x^2 \leq y^2)$ = ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
         $\lnot \exists n, a, b, c \in \mathbb{Z} : (n > 2 \land a^n + b^n = c^n)$\\
         %$\lnot \exists n \exists a \exists b \exists c (a,b,c,n \in Z \land n > %2 \land a^n + b^n = c^n)$
     \end{block}
@@ -281,6 +281,7 @@ Det viser seg at De Morgan's lover også fungerer på kvantorer.\\
         \item $\lnot \forall x : P(x)$ \\
         $\equiv \lnot [P(x_1) \land P(x_2) \land ... \land P(x_n)]$\\
         $\equiv \lnot P(x_1) \lor \lnot P(x_2) \lor ... \lor \lnot P(x_n)$\\ $\equiv \exists x : \lnot P(x)$
+        \pause
         \item $\lnot \exists x : P(x)$\\
         $\equiv \lnot [P(x_1) \lor P(x_2) \lor ... \lor .. P(x_n)]$\\
         $\equiv \lnot P(x_1) \land \lnot P(x_2) \land ... \land \lnot P(x_n)$\\ 

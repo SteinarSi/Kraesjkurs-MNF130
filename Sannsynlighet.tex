@@ -1,7 +1,7 @@
 \section{Stokastisitet}
 \subsection{Counting}
 \begin{frame}
-\begin{block}{Product Rule}
+\begin{block}{Produktregelen}
 \begin{itemize}
 \item Noe kan brytes ned i to aksjoner som kombineres med hverandre
 \item For den ene finnes det $n_1$ muligheter, for den andre $n_2$
@@ -20,7 +20,7 @@
 \end{frame}
 
 \begin{frame}
-\begin{block}{Sum Rule}
+\begin{block}{Sumregelen}
 \begin{itemize}
 \item Noe kan gjøres på enten en av $n_1$ måter, eller en av $n_2$ måter
 \item Det finnes ingen element som er både i $n_1$ og i $n_2$
@@ -39,9 +39,9 @@
 \end{frame}
 
 \begin{frame}
-\begin{block}{Subtraction Rule}
+\begin{block}{Substraksjonsregelen}
 \begin{itemize}
-\item Ligner \textit{Sum rule}, men flere elementer er i flere grupper
+\item Ligner \textit{Sumregelen}, men flere elementer er i flere grupper
 \item Noe kan gjøres på enten en av $n_1$ måter, eller en av $n_2$ måter, men noen er i både $n_1$ og $n_2$
 \item Det blir $n_1+n_2-felles(n_1,n_2)$ muligheter
 \end{itemize}
@@ -58,7 +58,7 @@
 \end{frame}
 
 \begin{frame}
-\begin{block}{Division Rule}
+\begin{block}{Divisjonsregelen}
 \begin{itemize}
 \item Det er $n$ måter å gjøre noe, men egentlig finnes det for hver måte minst $d$ lignende måter
 \item Det blir da $n/d$ forskjellige muligheter
@@ -77,7 +77,7 @@
 \begin{frame}[fragile]{Permutasjon? Kombinasjon? Variasjon? Hæ?}
 \adjustbox{scale=0.9}{
 \begin{tikzcd}
-                               &                                                         & \text{Blir alle elemente med?} \arrow[ld, "ja"'] \arrow[rd, "nei"] &                                                                  &              \\
+                               &                                                         & \text{Blir alle elementer med?} \arrow[ld, "ja"'] \arrow[rd, "nei"] &                                                                  &              \\
                                & \text{Permutasjon} \arrow[ld, "med"'] \arrow[d, "uten"] &                                                                    & \text{Er rekkefølgen viktig?} \arrow[ld, "ja"'] \arrow[d, "nei"] &              \\
  \frac{n!}{r!\cdot s!\cdot t!} & n!                                                      & \text{Variasjon} \arrow[ld, "med"'] \arrow[d, "uten"]              & \text{Kombinasjon} \arrow[d, "med"'] \arrow[rd, "uten"]          &              \\
                                & n^k                                                     & \frac{n!}{(n-k)!}                                                  & \binom{(n+k-1)}{(k-1)}                                           & \binom{n}{k}

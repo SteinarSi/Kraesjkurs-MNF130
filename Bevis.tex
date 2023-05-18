@@ -7,18 +7,18 @@
     
     3. Kan vi knytte det sammen?\\
     
-    (4. Kan vi skriver det som formler eller kan vi tegner noe?)\\
+    (4. Kan vi skrive det som formler eller kan vi tegne noe?)\\
 
-    (5. Skrev ned hva dere prøve å bevise!) %raus?
+    (5. Skriv ned hva dere prøve å bevise!) %raus?
 \end{frame}
 
-\begin{frame}{Beviser eksempel}
+%\begin{frame}{Beviser eksempel}
     %en for formler og en for tegner? Mengde? En av dem er nok?
-\end{frame}
+%\end{frame}
 
 \begin{frame}{Direkte bevis}
     Et direkte bevis for $p \rightarrow q$ er et som antar at $p$ = T, og viser at det medfører at $q$ = T.\\
-    Dette er ofte de enkleste bevisene. Hvis du har formler du må bare knytte sammen, forsøk det først.\\
+    Dette er ofte de enkleste bevisene. Hvis du har formler du bare må knytte sammen, forsøk det først.\\
     
     \pause
     \begin{block}{Vis at om $x$ og $y$ er oddetall, da er $x + y$ et partall.}
@@ -42,7 +42,7 @@
         $n=2l+1 \rightarrow n^2=2k+1$\\
         $(n)^2=(2l+1)^2=4l^2+4l+1=2(2l^2+2l)+1=2k+1$ hvor $k=2l^2+2l \in\mathbb{N}$\\
     \pause
-        $\implies$ hvis $n$ er IKKE et partall så er heller IKKE $n^2$ et partall.\\
+        $\implies$ hvis $n$ IKKE er et partall så er heller ikke $n^2$ et partall.\\
         $\implies$ hvis $n^2$ er et partall så er også $n$ et partall.
         \qed
     \end{block}
@@ -65,21 +65,21 @@
 \end{frame}
 
 \begin{frame}{Uttømmende bevis (/proof by exhaustion)}
-    OBS! Ingen garanti for å få poenger! Men hvis du har tid og ikke et plan, prøv det.\\
-    Noen ganger orker vi ikke finne på et elegant bevis. Da tar vi heller for oss hvert enkelt tilfelle hver for seg, og når vi har vist at det holder for alle tilfeller har vi bevist påstanden.
+    OBS! Ingen garanti for å få poeng! Men hvis du har god tid og ingen bedre ideer, prøv det. Noen ganger greier vi ikke finne på et elegant bevis. Da tar vi heller for oss hvert enkelt tilfelle hver for seg, og når vi har vist at det holder for absolutt alle tilfeller har vi bevist påstanden. Merk at da må det være et endelig antall tilfeller.
     \pause
     \begin{block}{Vis at alle sommer-OL har blitt arrangert i årstall delelige på 4.}
+        \pause
         1896 mod 4 = 0 \checkmark \\
         1900 mod 4 = 0 \checkmark \\
-        1904 mod 4 = 0 \checkmark \\
-        .... \\
-        (de neste 24 linjene er trivielle og etterlatt som en oppgave for leseren)\\
-        ....\\
+        %1904 mod 4 = 0 \checkmark \\
+        {[... de neste 29 linjene er trivielle og etterlatt som en oppgave for leseren ...]}\\
         2020 mod 4 = 0 \checkmark
     \end{block}
+    \pause
+    Dette er altså ikke et komplett bevis. Vi må faktisk vise alle tilfeller før vi er ferdig.
 \end{frame}
 
-\begin{frame}{Motbeviser}
+\begin{frame}{Motbevis}
     For å bevise at en påstand er usann, holder det vanligvis bare å finne et moteksempel. Dette er vanligvis den letteste typen bevis.\\
     OBS! Det er det eneste øyeblikket hvor det er ok å stoppe etter et eksempel.
     \pause
@@ -102,7 +102,7 @@
         \item Vis at $P(0)$ stemmer
         \item Vis at om $P(n)$ stemmer, må $P(n+1)$ stemme
     \end{itemize}
-    Dermed har vi bevist at $\forall x [ x > 0 \rightarrow P(x)]$
+    Dermed har vi bevist at $\forall x : [ x \geq 0 \rightarrow P(x)]$
     
     \begin{figure}
         \centering
@@ -113,16 +113,16 @@
 \end{frame}
 
 \begin{frame}{Apen og Stigen} %bild?
-    Apen stå på trinn 0.\\
+    Apen står på trinn 0.\\
     
     Hvis apen viser deg at den kan klatre opp til trinn 1, vet du om den kan klatre opp til trinn k?\\
 \pause
     Nei, du vet bare at den kan klatre opp til trinn 1.\\
     
 \pause
-    Hvis apen viser deg at den kan klatre opp fra en vilkårlig trinn til næsten, vet du om den kan klatre opp til trinn k?\\
+    Hvis apen viser deg at den kan klatre opp fra et vilkårlig trinn til det neste, vet du nå om den kan klatre opp til trinn k?\\
 \pause
-    Ja, vi vet at den allerede står på trinn 0 og den kan klatre fra en trinn til næste. Den kan klatre opp hver trinn.
+    Ja, vi vet at den allerede står på trinn 0 og den kan klatre fra er trinn til neste. Den kan derfor klatre opp hvert trinn.
     
 \end{frame}
 \begin{frame}{Eksempel på matematisk induksjon}
@@ -161,7 +161,7 @@
 \begin{frame}{Rekursive funksjoner}
     En rekursiv funksjon er en funksjon som refererer til seg selv.
     \pause
-    \begin{block}{fakultæt}
+    \begin{block}{fakultet}
         0! := 1 \\
         n! := n * (n-1)!\\
     \end{block}    
@@ -188,7 +188,7 @@
 \end{frame}
 
 \begin{frame}{Rekursive definisjoner}
-    Som med funksjoner kan vi også definere andre strukturer rekursivt. Med andre strukturer mener vi sett 90\% av tiden.\\
+    Som med funksjoner kan vi også definere andre strukturer rekursivt. Med 'andre strukturer' mener vi sett 90\% av tiden.\\
     
     De defineres med et basissteg, dvs utgangspunktet, og et rekursivt steg for å utvide det.\\
     
@@ -221,16 +221,16 @@
     Basissteg: $(0, 0) \in \mathbb{T}$\\
     Rekursivt steg: $(a, b) \in \mathbb{T} \rightarrow (a+1, b) \in \mathbb{T} \land (a+1, b+1) \in \mathbb{T}$.\\
     
-    Oppgave: vis at $\forall a \forall b [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.\\
+    Oppgave: vis at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.\\
     
     \pause
     Basissteg: $(0, 0) \in \mathbb{T}$, og $0 \geq 0$. \checkmark\\
-    Rerkursivt steg: vi antar at $\forall a \forall b [(a, b) \in \mathbb{T} \rightarrow a \geq b]$. Hvert rekursive kall legger til to nye par, $(a+1, b)$ og $(a+1, b+1)$. Vi ser på dem hver for seg:
+    Rerkursivt steg: vi antar at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$. Hvert rekursive kall legger til to nye par, $(a+1, b)$ og $(a+1, b+1)$. Vi ser på dem hver for seg:
     \begin{itemize}
         \item Om $a \geq b$ er $a+1 \geq b$.
         \item Om $a \geq b$ er $a+1 \geq b+1$. \checkmark
     \end{itemize}
-    Dermed kan vi konkludere med at $\forall a \forall b [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.
+    Dermed kan vi konkludere med at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.
 \end{frame}
 
 \subsection*{Spørretid}

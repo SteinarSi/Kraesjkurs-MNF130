@@ -1,7 +1,7 @@
 \section{Relasjoner}
 \subsection{Relasjoner}
 \begin{frame}[fragile]{Relasjoner}
-    En relasjon $R$ fra $A$ til $B$ er et subset av $A \times B$. De minner om funksjoner, men er et mer generelt konsept. De er lettere å visualisere ved å tegne dem:
+    En relasjon $R$ fra $A$ til $B$ er et subset $ R \subseteq A \times B$. De minner om funksjoner, men er et mer generelt konsept. De er lettere å visualisere ved å tegne dem:
     \begin{figure}
         \centering
         \subfloat{{\includegraphics[width=2.8cm]{images/int again.png} }}
@@ -15,7 +15,7 @@
     \end{figure} 
 
     \pause
-    Veldig ofte er $A$ og $B$ det samme settet, dvs at $R$ er et subset av $A \times A$.\\ 
+    Veldig ofte er $A$ og $B$ det samme settet, dvs at $R \subseteq A \times A$.\\ 
     Da kaller vi R en relasjon \emph{på} $A$.
 \end{frame}
 
@@ -291,6 +291,8 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
       \hline
     \end{tabular}
     \end{center}
+    \pause
+    Merk at symmetri og antisymmetri ikke er helt det motsatte. En relasjon kan være begge deler (som $\emptyset$), og en relasjon kan være ingen av dem.
 \end{frame}
 
 \subsection*{Spørretid}

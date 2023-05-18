@@ -79,7 +79,8 @@ def minAndMax(list):
     return (list[0], list[-1]) # 2
             \end{minted}
             Den første blir $2+(n-1)*(2+2) = 2+4(n-1) = 4n-2$, som er mindre enn \underline{$100n$}.\\
-            Den andre blir $2 + n*log_2(n)$, og det er mindre enn \underline{$100 * n * log_2(n)$}.
+            \pause
+            Den andre blir $2 + n \cdot log_2(n)$, og det er mindre enn \underline{$100 \cdot n \cdot log_2(n)$}.
         \end{column}
     \end{columns}
 \end{frame}
@@ -92,9 +93,8 @@ def minAndMax(list):
         Intuitivt kan vi tenke at $f \leq g$.
     \end{definition}
     \pause
-    I vårt eksempel fant vi at algoritmene bruker mindre enn $100n$, $100n$, og $100 * n * log_2(n)$ operasjoner, og da kjører algoritmene på $O(n)$, $O(n)$, og $O(n * log(n))$.\\[2mm]
-
-    Big O er en veldig kjapp og enkel måte å estimere hva slags forskjeller som betyr noe og ikke. Små konstanter spiller ingen rolle i det store bildet.
+    I vårt eksempel fant vi at algoritmene bruker mindre enn $100n$, $100n$, og $100 \cdot n \cdot log_2(n)$ operasjoner, og da kjører algoritmene på $O(n)$, $O(n)$, og $O(n \cdot log(n))$.\\[2mm]
+    Big O er en veldig kjapp og enkel måte å estimere hva slags forskjeller som betyr noe og ikke. Konstanter spiller nesten ingen rolle i det store bildet: $O(10n) = O(5n) = O(n)$.
 \end{frame}
 
 \begin{frame}[fragile]{Regneregler for Big O}
