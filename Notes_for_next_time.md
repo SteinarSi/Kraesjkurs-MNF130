@@ -44,6 +44,10 @@ Kan kanskje gjøre det tydeligere at forskjellige teknikker brukes når bevisene
 Da kan vi også referere til ekvivalensreglene for hvordan vi kan omformulere en bevisoppgave til en annen ekvivalent form og bevise det istedet. 
 For eksempel omformulere `p -> q` til `!q -> !p`.
 
+Vi kan vurdere å korte ned på kapitlet om beviser, og heller ta det rett etter logikkapitlet.
+Fordi spesielt kapitlene om mengdelære og relasjoner har allerede flere bevisoppgaver, og det er kanskje lettere henge med om vi flasher noen enkle eksempler på hver bevisteknikk, og så heller viser flere beviser i de andre kapitlene.
+F. eks er å bevise injektivitet et direkte bevis, surjektivitet et konstruktivt bevis, etc.
+
 ### Tallteori
 Vi glemte å gå igjennom rekurrensforhold.
 Det er kanskje her det passer best å ta det med?
@@ -55,6 +59,11 @@ For eksempel er det lett å løse ligningen `3x = 4` ved å gange med `1/3` på 
 De aller fleste studentene har allerede vært igjennom både symmetrisk og asymmetrisk kryptografi i INF140 før de begynte på MNF130.
 Unntaket er IMØ-folk, som ikke har 140 før på tredje året.
 Derfor kan vi vurdere å enten droppe temaet eller korte det ned veldig.
+
+### Stokastisitet
+Kanskje bruke vennediagrammer også for å gi en intuisjon for sannsynlighet?
+F. eks at P(A | B) = P(A & B) / P(B) ser man lett om man tegner det.
+Å lære dem hvordan de kan gjenoppdage slike formler, istedet for å pugge dem.
 
 ### Algoritmer
 
