@@ -1,0 +1,79 @@
+\subsection{Kvantorer}
+\begin{frame}{Kvantorer (/Quantifiers)}
+    \begin{itemize}
+        \item Ofte vil vi si noe om et predikat $P(x)$, men for flere potensielle $x$ samtidig.
+        \item $\forall x : P(x)$ = $x_1 \land x_2 \land ... \land x_n$ = ''For alle $x$ er det sant at $P(x)$''
+        \item $\exists x : P(x)$ = $x_1 \lor x_2 \lor ... \lor x_n$ = ''Det eksisterer en $x$ slik at det er sant at $P(x)$''
+        \item $\exists x \in S : P(x)$ = ''Det eksisterer en $x$ i settet $S$ slik at  det er sant at $P(x)$''
+    \end{itemize}
+    
+    \pause
+    \begin{block}{Eksempler}
+        $\forall x : (x < x + 1)$ = ''For alle x er det sant at $x < x +1$''\\
+        $\exists x : (x > x^2)$ = ''Det eksisterer en x slik at det er sant at $x > x^2$''\\
+        $\exists x \in \mathbb{N} : (x*x = 1)$\\
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Kvantorer i praksis}
+    Kvantorer ser skumle ut, men det er bare for-løkker.
+    \begin{minted}[fontsize=\scriptsize]{python}
+def forall(p, xs):
+    for x in xs:
+        if not p(x):
+            return False
+    return True
+    
+def exists(p, xs):
+    for x in xs:
+        if p(x):
+            return True
+    return False
+    \end{minted}
+    
+    \pause
+    \begin{itemize}
+        \item exists(p, xs) = $\exists x \in xs : p(x)$
+        \item forall(p, xs) = $\forall x \in xs : p(x)$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Nøstede kvantorer (/Nested quantifiers)}
+    \begin{itemize}
+        \item Ofte vil vi si noe om mange kombinasjoner av variabler samtidig.
+        \item Da slår vi sammen flere $\forall$ og $\exists$.
+        \item Om vi har flere like kvantorer etter hverandre kan vi slå dem sammen med tupler.
+    \end{itemize}
+    
+    \begin{block}{Eksempler}
+        $\forall x \forall y : (x^2 + y^2 \geq 0) = \forall x, y : (x^2 + y^2 \geq 0)$ \\
+        $\forall x \exists y : (x * y = 1)$ = ''For alle x eksisterer det en y slik at $x * y = 1$'' \\
+        $\exists x \forall y : (x^2 \leq y^2)$ = ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
+        $\lnot \exists n, a, b, c \in \mathbb{Z} : (n > 2 \land a^n + b^n = c^n)$\\
+        %$\lnot \exists n \exists a \exists b \exists c (a,b,c,n \in Z \land n > %2 \land a^n + b^n = c^n)$
+    \end{block}
+\end{frame}
+
+\begin{frame}{De Morgan dukker opp igjen}
+Det viser seg at De Morgan's lover også fungerer på kvantorer.\\
+    \begin{columns}
+    \begin{column}{0.48\textwidth}
+    \begin{itemize}
+        \item $\lnot \forall x : P(x)$ \\
+        $\equiv \lnot [P(x_1) \land P(x_2) \land ... \land P(x_n)]$\\
+        $\equiv \lnot P(x_1) \lor \lnot P(x_2) \lor ... \lor \lnot P(x_n)$\\ $\equiv \exists x : \lnot P(x)$
+        \pause
+        \item $\lnot \exists x : P(x)$\\
+        $\equiv \lnot [P(x_1) \lor P(x_2) \lor ... \lor .. P(x_n)]$\\
+        $\equiv \lnot P(x_1) \land \lnot P(x_2) \land ... \land \lnot P(x_n)$\\ 
+        $\equiv \forall x : \lnot P(x)$
+    \end{itemize}      
+    \end{column}
+    \pause
+    \begin{column}{0.45\textwidth}
+        \includegraphics[scale=0.3]{images/Always a bigger fish.jpeg}
+        \pause
+        \includegraphics[scale=1]{images/bigger fish.PNG}
+    \end{column}
+    \end{columns}
+\end{frame}

@@ -1,0 +1,100 @@
+\subsection*{RSA}
+\begin{frame}{RSA}
+\begin{itemize}[<+->]
+\item Asymmetrisk kryptering med to nøkler for hver deltaker
+\item Kryptering
+	\begin{itemize}
+	\item Offentlig nøkkel for kryptering (n,e)
+	\item Privat nøkkel for dekryptering d
+	\end{itemize}
+ \item $d$ er inverset av $e$ modulo $(p-1)\cdot (q-1)$ 
+ \item med $p\cdot q=n$ og p,q er primtall
+\end{itemize}
+\end{frame}
+
+\begin{frame}{}
+    \begin{columns}
+        \begin{column}{0.45 \textwidth}
+            Instruksjon:\\
+            velg to primtall $p,q$\\
+            $n=p\cdot q$
+            Velg $e$ med $2<e<\phi(n)=(p-1)\cdot (q-1)$ og $gcd(e,\phi(n))=1$\\
+            Finn $d=[e^{-1}]_{\phi(n)}$\\
+            Gir ut bare offentlig nøkkel $(n,e)$
+        \end{column}
+        \begin{column}{0.45 \textwidth}
+            Eksempel:\\
+            $p=7,\,q=13$\\
+            $n=7\cdot 13=91$\\
+            $e$ mellom $2$ og $6\cdot 12=72$ og $gcd(e,72)=1$\\
+            Vi prøve 23 på neste slide:
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Finn $d$ og $e$}
+    \begin{columns}
+        \begin{column}{0.45 \textwidth}
+            $gcd(72,23):$\\
+            $(72)=3\cdot (23)+(3)$\\
+            $(23)=7\cdot(3)+(2)$\\
+            $(3)=1\cdot (2)+(1)$\\
+            $(2)=2\cdot (1)+(0)$\\
+            gcd(72,23)=1\\
+            Vi har $e=23$
+        \end{column}
+        \begin{column}{0.45 \textwidth}
+            Når finner vi $d=[e^{-1}]_{72}$:\\
+            $1=(3)-1\cdot (2)$\\
+            $=(3)-((23)-7\cdot (3))$\\
+            $=8\cdot (3)-(23)$\\
+            $=8\cdot ((72)-3\cdot (23))-(23)$\\
+            $=8\cdot (72)-25\cdot (23)$\\
+            $\implies d=[-25]_{72}=[72-25]_{72}=47$
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Kryptering}
+    \begin{column}{0.45 \textwidth}
+        Kryptering av blokk M:\\
+        $C=[M^{e}]_{n}$\\
+        $M=42$; $n=91, e=23$\\
+        men $42^{23}=2.16\times 10^{37}$\\
+        \pause
+        $e=23=10111_2$\\
+        
+        $[42^{23}]_{91}=[42^{1}]_{91}\cdot[42^{2}]_{91}\cdot[42^{4}]_{91}\cdot [42^{16}]_{91}$
+        \end{column}
+        \pause
+        \begin{column}{0.45 \textwidth}
+         $[42^1]_{91}=42$\\
+         $[42^2]_{91}=[1764]_{91}=35$\\
+         $[42^4]_{91}=[35^2]_{91}=[1225]_{91}=42$\\
+         $[42^8]_{91}=[42^2]_{91}=35$\\
+         $[42^{16}]_{91}=[35^2]_{91}=42$\\
+         
+         $[42^{23}]_{91}=[42\cdot 35\cdot 42\cdot 42]_{91}=[2593080]_{91}=35$
+        \end{column}
+\end{frame}
+
+\begin{frame}{Dekryptering}
+    \begin{columns}
+        \begin{column}{0.45 \textwidth}
+        Dekryptering av blokk C:\\
+        $M=[C^d]_{n}$\\
+        $C=35$; $n=91, d=47$\\
+        $d=47=101111_2$\\
+        \end{column}
+
+        \begin{column}{0.45 \textwidth}
+        $[35^1]_{91}=35$\\
+        $[35^2]_{91}=42$\\
+        $[35^4]_{91}=35$\\
+        $[35^8]_{91}=42$\\
+        $[35^{16}]_{91}=35$\\
+        $[35^{32}]_{91}=42$\\
+        $[35^{47}]_{91}=[35\cdot 42\cdot 35 \cdot 42 \cdot 42]_{91}=[35^2\cdot 42^3]_{91}=[42^4]_{91}=42$
+        \end{column}
+    \end{columns}
+\end{frame}

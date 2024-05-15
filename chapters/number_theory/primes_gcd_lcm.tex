@@ -1,0 +1,109 @@
+\subsection*{Primtall, Greatest common divisor, Least common multiple}
+\begin{frame}
+\begin{block}{Primtall}
+Et tall som bare kan deles av seg selv og 1\\
+Eksempler: 2,3,5,7,11,13,...
+\end{block}
+\pause
+\begin{block}{Største felles faktor (/Greatest common divisor)}
+$gcd(a,b) := $det største tallet som deler både a og b\\
+Eksempel: $gcd(4,6)=2$\\
+Co-prime: a og b er co-prime dersom $gcd(a,b)=1$
+\end{block}
+\pause
+\begin{block}{Laveste felles multiplum (/Least common multiple)}
+$lcm(a,b) := $ det minste tallet som kan deles av både a og b\\
+Eksempel: $lcm(4,6)=12$\\
+hvis $a\cdot b=gcd(a,b)\cdot lcm(a,b)$\\
+$gcd(a,b) = 1$ $\rightarrow lcm(a,b) = a\cdot b$
+\end{block}
+\end{frame}
+
+\subsection*{Euklids algoritme}
+\begin{frame}[fragile]{Euklids algoritme}
+\begin{columns}
+    \begin{column}{0.45\textwidth}
+\begin{minted}[fontsize=\scriptsize]{python}
+def gcd(a, b):
+    while b != 0:
+        r = a % b
+        a = b
+        b = r
+    return a
+\end{minted}
+ 	\end{column}
+ 	\pause
+    \begin{column}{0.45\textwidth}
+    \begin{center}
+       gcd(28,12)\\
+       
+    $28=2\cdot 12+4$\\
+    $12=3\cdot 4+0$\\
+    
+    gcd(28,12)=4 
+    \end{center}
+ 	\end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{}
+\begin{block}{Utvidet Euklids algoritme}
+Regner ut to parameter $s$ og $t$ slik at $gcd(a,b)$ kan skrives som linærkombinasjon\\
+$gcd(a,b)=s\cdot a+t\cdot b$\\
+$gcd(12,28)=4=-2\cdot 12 + 1\cdot 28$\medskip
+
+Kan brukes for å finne multiplikativt invers\\
+Multiplikativ inverse finnes dersom $gcd(a,b)=1$
+\end{block}
+\pause
+
+\begin{block}{Finne multiplikativt invers for $a$ med $mod\, m$}
+\begin{itemize}
+\item Funker bare dersom $gcd(a,m)=1$\\
+\item Regn ut linærkombinasjon $gcd(a,b)=s\cdot a+t\cdot b$ med gcd
+\item $a\cdot x \equiv 1 (mod\, m)$ er multiplicative inverse
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Extended Euklids algoritme}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+             gcd(26,7)\\
+             
+             $(26)=3\cdot (7)+(5)$\\
+             $(7)=1\cdot (5)+(2)$\\
+             $(5)=2\cdot(2)+(1)$\\
+             $(2)=2\cdot(1)+(0)$\\
+             
+             gcd(26,7)=1
+        \end{column}
+        \pause
+        \begin{column}{0.45\textwidth}
+            Nå går vi tilbake:\\
+            $(5)=2\cdot(2)+1$\\
+            
+            $\implies 1=(5)-2\cdot (2)$\\
+            $=(5)-2\cdot ((7)-(5))$\\
+            $=3\cdot (5)-2\cdot(7)$\\
+            $=3\cdot ((26)-3\cdot (7))-2\cdot (7)$\\
+            $=3\cdot (26)-11\cdot (7)$
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Eksempel Multiplikativt Invers}
+\begin{itemize}[<+->]
+\item Hva er multiplikativt invers av $7\, mod\, 26$? ($a\cdot 7=1\, mod\, 26$)
+\item $gcd(a,m) = gcd(7,26)=1$ $\rightarrow$ har multiplikativt invers
+\item Linærkombinasjon fra gcd: $3\cdot (26)-11\cdot (7)=1$
+\item $[1]_{26}=[3\cdot (26)-11\cdot (7)]_{26}=[-11\cdot 7]_{26}$
+\item $a=-11$
+\item $[-11]_{26}=[26-11]_{26}=[15]_{26}=15$
+\item 15 er inverse av 7 modulo 26
+
+\end{itemize}
+\end{frame}

@@ -1,0 +1,27 @@
+\subsection*{Begrep}
+\begin{frame}{Symmetrisk og asymmetrisk kryptografi}
+\begin{block}{Symmetrisk kryptografi}
+\begin{itemize}
+\item Det finnes bare \textit{én} nøkkel, som begge personer bruker
+\item Brukes for både kryptering og dekryptering
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{Asymmetrisk kryptografi}
+\begin{itemize}
+\item Hver person har \textit{to} nøkler: Privat og offentlig
+\item Kryptering med offentlig nøkkel av den andre personen
+\item Dekryptering med privat nøkkel
+\item Eksempel: RSA
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Symmetrisk kryptografi}
+    $f(c)=[c+key]_{26}$\\
+    med $key=2$\\
+    $f(ZEBRA)=BGDTC$\\
+    
+    $f^{-1}(d)=[d-key]_{26}$\\
+    $f^{-1}(BGDTC)=ZEBRA$
+\end{frame}

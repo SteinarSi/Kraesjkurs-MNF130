@@ -1,0 +1,91 @@
+\subsection*{Tallsystem}
+\begin{frame}
+\begin{block}{Tallsystem}
+En representasjon av tall med forskjellige tegn med en base
+\end{block}
+\pause
+
+\medskip
+
+\begin{table}[]
+\centering
+\label{tab:tallsystemer}
+\begin{tabular}{l|l|l|l|l}
+Navn & Sifre & 5 & 11 & 34 \\ \hline
+Desimal (b=10) & 0-9 & 5& 11 & 34 \\
+Binær (b=2) & 0-1 & 101 & 1011 & 100010 \\
+Octal (b=8) & 0-7 & 5&  13 & 42\\
+Hexadesimal (b=16) & 0-9,a-f& 5& B& 22\\
+base=13 & 0-9,a-c & 5& B& 28
+\end{tabular}
+\caption{Eksempler på forskjellige tallsystemer}
+\end{table}
+\end{frame}
+
+\subsection*{Konvertering av tallsystem}
+\begin{frame}[fragile]{Desimal til base b}
+\begin{columns}
+    \begin{column}{0.30\textwidth}
+    \begin{block}{pseudokode}
+            tall n til base b:\\
+            next digit = $n\%b$\\
+            $n=\floor{\frac{n}{b}}$\\
+            forsette med det til $n=0$
+    \end{block}
+    \end{column}
+ 	\pause
+    \begin{column}{0.66\textwidth}
+\begin{table}
+\begin{tabular}{r|c|r}
+n & nextDigit & output \\ \hline
+22 & & 0 \\
+11 & 0 & 0\\
+5 & 1 & 10\\
+2 & 1 & 110\\
+1 & 0 & 0110\\
+0 & 1 & 10110
+\end{tabular}
+\caption{Eksempel for dec til base 2}
+\end{table}
+ 	\end{column}
+ 	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Base b til desimal}
+\begin{columns}
+    \begin{column}{0.30\textwidth}
+\begin{block}{pseudokode}
+    tall n og base b\\
+    $sum=0$; $index=0$\\
+    starter med først siffer $s$:\\
+    $sum+=base^{index}\cdot s$\\
+    $index+=1$\\
+    forsette med hver siffer $s$
+\end{block}
+ 	\end{column}
+ 	\pause
+    \begin{column}{0.66\textwidth}
+\begin{table}
+%\begin{tabular}{r|r|r}
+%toAdd & n & sum \\ \hline
+% & 10110 & 0\\
+%0 & 1011 & 0\\
+%2 & 101 & 2\\
+%4 & 10 & 6\\
+%0 & 1 & 6\\
+%16 & 0 & 22
+%\end{tabular}
+\begin{tabular}{c|r|r|r|r|r}
+    tall & 1 & 0 & 1 & 1 & 0 \\ \hline
+    base & 16 & 8 & 4 & 2 & 1 \\ \hline
+    produkt & 16 & 0 & 4 & 2 & 0 
+\end{tabular}
+\caption{Eksempel for 2 til dec}
+\end{table}
+\begin{center}
+$16+0+4+2+0=22$    
+\end{center}
+
+ 	\end{column}
+ 	\end{columns}
+\end{frame}

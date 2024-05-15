@@ -1,0 +1,41 @@
+\subsection{Korteste sti}
+\begin{frame}[fragile]{Korteste sti}
+    Vi kan bruke BFS til å finne den korteste stien i en graf, og dermed også den korteste ruten til Kvarteret. Men noen kanter/veier tar lengre tid å gå enn andre, så i praksis fungerer det ikke så bra.
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{tikzcd}
+            \text{Høytek} \arrow[r] \arrow[d] & B \arrow[r] \arrow[d] & \text{Kvarteret}   \\
+            A \arrow[r]                & C \arrow[r]           & D \arrow[u]
+            \end{tikzcd}
+        \end{column}
+        \pause
+        \begin{column}{0.48\textwidth}
+            \begin{tikzcd}
+            \text{Høytek} \arrow[r, "2"] \arrow[d, "1"] & B \arrow[r, "8"] \arrow[d, "3"] & \text{Kvarteret}        \\
+            A \arrow[r, "5"]                     & C \arrow[r, "1"]                & D \arrow[u, "2"]
+            \end{tikzcd}
+        \end{column}
+    \end{columns}
+    \pause
+    \begin{definition}[Vektet graf]
+        En vektet graf er en der alle kantene også har en vekt/kostnad.
+    \end{definition}
+\end{frame}
+
+\begin{frame}[fragile]{Dijkstras algoritme}
+    Dijkstras algoritme fungerer utmerket for å finne den korteste stien i en vektet graf, så lenge vektene er positive tall.
+    \begin{minted}[fontsize=\scriptsize]{python}
+def dijkstra(start, end, graph):
+    dist = { u: 99999999999999 for u  in graph }
+    dist[start] = 0
+    queue = [start]
+    while len(queue) > 0:
+        next = min(queue, key=lambda u: dist[u]) # finner noden med lavest distanse
+        queue.remove(next)
+        for (v, weight) in graph[next]:
+            if dist[v] < dist[next] + weight:
+                dist[v] = dist[next] + weight
+                queue.append(v)
+    return dist
+    \end{minted}
+\end{frame}
