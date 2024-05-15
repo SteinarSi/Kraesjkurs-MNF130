@@ -3,8 +3,6 @@
 \documentclass[aspectratio=169,fleqn,handout,xcolor={dvipsnames}]{beamer}
 
 \usetheme[pageofpages=of]{hubln}
-% dette dokumentet er hoveddokumentet og må kompileres
-% resten skjer i Preamble.tex
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -72,46 +70,16 @@
 
 \usepackage{mathtools}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
-%\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
-% Hier die Daten zur Präsentation eintragen
-\author[ls]{Steinar Simonnes og Lena Eichhorst}
+\author[ls]{Steinar Simonnes og Carina Seidel}
 \title[sgp]{Kræsjkurs MNF130}
 \institute{Institutt for Informatikk \\ Universitetet i Bergen}
-\date[16.05.23]{16 Mai 2023}
+\date[22.05.24]{22 Mai 2024}
 
 \begin{document}
-\begin{frame}[t,plain]
-    \titlepage
-\end{frame}
 
-% table of contents (skjer automatisk)
-\section{Intro}
-\subsection*{Agenda}
-\begin{frame}
-    %\tableofcontents
-    \begin{columns}[t]
-        \begin{column}{.5\textwidth}
-            \tableofcontents[sections={1-5}]
-        \end{column}
-        \begin{column}{.5\textwidth}
-            \tableofcontents[sections={6-}]
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\subsection*{Slides 'n' Slido}
-\begin{frame}{Slides 'n' Slido}
-    Dere kan stille spørsmål her:\\
-    \url{tinyurl.com/MNF130-QA}\\
-    Eller søk på slido.com og skriv inn koden "MNF130".\\[3mm]
-    Dere kan laste ned presentasjonen her:\\
-    \url{tinyurl.com/MNF130-Slides}
-\end{frame}
-
-%===============================================
-
-% \input{chapters/logic}
+\input{chapters/intro.tex}
+\input{chapters/logic}
 % \input{chapters/set_theory}
 % \input{chapters/relations}
 % \input{chapters/proofs}
@@ -119,14 +87,6 @@
 % \input{chapters/probability}
 % \input{chapters/algorithms}
 % \input{chapters/graphs}
+\input{chapters/outro.tex}
 
-\begin{frame}
-\begin{center}
-\begin{Large}
-\textbf{Lykke til på eksamen!\\[5mm]
-Takk for oss :)}
-
-\end{Large}
-\end{center}  
-\end{frame}
 \end{document}
