@@ -1,66 +1,127 @@
 
 
 \begin{frame}{Beviser}
-    1. Hva vet vi?\\
-    
-    2. Hva beviser vi? \\
-    
-    3. Kan vi knytte det sammen?\\
-    
-    (4. Kan vi skrive det som formler eller kan vi tegne noe?)\\
+    Gitt noen premisser, vis at det garanterer en konklusjon.\\
 
-    (5. Skriv ned hva dere prøve å bevise!) %raus?
+    Det aller vanskeligste er å finne riktig idé til beviset. Det finnes mange typer bevis, og det er mye rom for kreativitet. Man må bare prøve seg frem.\\
+    
+    Likvel kan vi vanligvis begynne med følgende:
+    \begin{enumerate}
+        \item Vurder hvorvidt påstanden ser ut til å stemme. Test på noen eksempler, prøv å finne et moteksempel.
+        \pause
+        \item Skriv opp hva vi vet, og hva vi vil vise, i mattenotasjon
+        \pause
+        \item Se etter en sammenheng, grunnen til at det ene impliserer det andre.
+        \pause
+        \item Gjør resten av beviset.
+    \end{enumerate}
 \end{frame}
 
-%\begin{frame}{Beviser eksempel}
-    %en for formler og en for tegner? Mengde? En av dem er nok?
-%\end{frame}
+\begin{frame}{Oppgave: vis at om $a$ og $b$ er oddetall, da er $a + b$ et partall.}
+    \begin{enumerate}
+        \item Vi tester med et par eksempler: $3+7 = 10, 15+1 = 16$.
+        \pause
+        \item Vi vet at $a = 2k + 1$, og $b = 2c + 1$, for noen heltall $k, c$. 
+        
+        Vi vil vise at $a + b = 2h$, for et heltall $h$.
+        \pause
+        \item Vi prøver å bare legge dem sammen og se hva som skjer:
+        
+        $a + b = (2k + 1) + (2c + 1) = 2(k + c + 1)$
 
-\begin{frame}{Direkte bevis}
-    Et direkte bevis for $p \rightarrow q$ er et som antar at $p$ = T, og viser at det medfører at $q$ = T.\\
-    Dette er ofte de enkleste bevisene. Hvis du har formler du bare må knytte sammen, forsøk det først.\\
-    
-    \pause
-    \begin{block}{Vis at om $x$ og $y$ er oddetall, da er $x + y$ et partall.}
-        Vi tar to oddetall $x$ og $y$. Da kan vi omskrive dem:\\
-        $x = 2a+1$, $y = 2b+1$, for $a, b \in \mathbb{N}_0$.\\
-        Nå viser vi at summen er partall: $x+y=2c$, $c \in \mathbb{N}_0$\\
-        Da er $x + y = (2a+1) + (2b+1) = 2a + 2b + 2 = 2(a+b+1)$.\\
-        Siden vi ganger med $2$ blir $2(a + b + 1)$ et partall uavhengig av hva $a + b + 1$ er.\\
-        \qed
+        Og da var vi plutselig allerede ferdige.
+    \end{enumerate}
+
+    \begin{block}{Bevis: summen av to oddetall er et partall}
+        La $a = 2k + 1, b = 2c + 1$ være oddetall, for vilkårlige heltall $k$ og $c$.\\
+        Da er $a + b = (2k + 1) + (2c + 1) = 2(k + c + 1)$, som er et partall. $\qed$
     \end{block}
 \end{frame}
 
-\begin{frame}{Kontrapositivt bevis (/proof by contraposition)}
-    Istedet for å bevise $p \rightarrow q$, er det ofte lettere å bevise $\lnot q \rightarrow \lnot p$. De uttrykkene er helt ekvivalente.\\
-    Det vil si å anta at $\lnot q = F$, og vise at da må også $\lnot p = F$.\\
+\begin{frame}{Direkte og kontrapositive bevis}
+    Et direkte bevis for $p \rightarrow q$ er et som antar at $p$ = T, og viser at det medfører at $q$ = T.
+    Dette er ofte de enkleste bevisene. Hvis du har formler du bare må knytte sammen, forsøk det først.\\
+
+    \pause
+    Vi gjorde nettopp et direkte bevis: $p =$ "$a$ og $b$ er heltall", $q =$ "$a+b$ er et oddetall", og vi viste at $p \rightarrow q$.\\
+
+    \pause
+    Siden $p \rightarrow q \equiv \lnot q \rightarrow \lnot p$, kan vi også bevise det 'baklengs': om konklusjon er usann, må premisset også være usannt.
+\end{frame}
+
+\begin{frame}{Oppgave: vis at for alle $n$, om $n^2$ er et partall, er $n$ et partall.}
+    \begin{enumerate}
+        \pause
+        \item Vi tester: 64 og 8 er partall, 36 og 6 er partall. Ser riktig ut.
+        \pause
+        \item Vi vet at $n^2 = 2k$, og vil vise at da er $n = 2c$.
+        \pause
+        \item Om $n^2$ er et partall, må det antageligvis være et partall ganget med seg selv, ellers får vi et oddetall. Det høres meningsfullt ut, men er kanskje vanskelig å vise rett frem.
+    \end{enumerate}
+
+    \pause
+    \begin{block}{For alle $n$, om $n^2$ er et partall, er $n$ et partall}
+        La $n = 2c + 1$ være et oddetall, for et heltall $k$.
+
+        \pause
+        Da er $n^2 = (2c + 1)^2 = 4c^2 + 4c + 1 = 2(2c^2 + 2c) + 1$, som er et oddetall.
+
+        \pause
+        Om $n$ er et oddetall er $n^2$ dermed også det. Om $n^2$ er et partall, er $n$ dermed nødt til å være et partall. $\qed$
+    \end{block}
+\end{frame}
+
+\begin{frame}{Motbevis}
+    For å bevise at en påstand er usann, holder det vanligvis bare å finne et moteksempel. Dette er vanligvis den letteste typen bevis.\\
+    Dette er kun her at det er greit å stoppe etter et eksempel.
+    \pause
+    \begin{block}{Påstand: det er ikke mulig å plassere 8 dronninger på et sjakkbrett uten at noen av dem truer hverandre.}
+    \pause
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.20]{images/8 queens.png}
+        % \caption{Motbevis}
+        \label{fig:my_label}
+    \end{figure}
     
-    \pause
-    \begin{block}{For ethvert heltall n har vi at hvis $n^2$ er et partall, så er n også et partall.}
-        $n^2=2k \rightarrow n=2l$;    $k,l\in\mathbb{N}$\\
-    \pause
-        $n=2l+1 \rightarrow n^2=2k+1$\\
-        $(n)^2=(2l+1)^2=4l^2+4l+1=2(2l^2+2l)+1=2k+1$ hvor $k=2l^2+2l \in\mathbb{N}$\\
-    \pause
-        $\implies$ hvis $n$ IKKE er et partall så er heller ikke $n^2$ et partall.\\
-        $\implies$ hvis $n^2$ er et partall så er også $n$ et partall.
-        \qed
     \end{block}
 \end{frame}
 
 \begin{frame}{Motsigelsesbevis (/proof by contradiction)}
-    For å bevise en proposisjon $p$, kan det vi heller bevise at $\lnot p$ leder til en motsigelse. Det vil si, motbevis det motsatte.
-    
+    For å bevise en proposisjon $p$, kan vi heller bevise at $\lnot p$ leder til en selvmotsigelse. 
+    Vi motbeviser det motsatte.\\
+
     \pause
-    \begin{block}{Vis at summen av et rasjonalt tall $\frac{a}{b}$ og et irrasjonalt tall $c$ også er et irrasjonalt tall.}
-    Vi antar det motsatte: at summen blir et rasjonalt tall: $\frac{a}{b}$ + $c$ = $\frac{e}{d}$ for $e, d \in \mathbb{Z}$.\\
-    $\implies \frac{e}{d} - \frac{a}{b} = c$\\
-    $\implies \frac{b\cdot d - a \cdot d}{b\cdot d} = c$\\
-    Men det impliserer at $c$ er et rasjonalt tall. [motsigelse!]\\
-    Derfor er det usant at summen er et rasjonalt tall\\
-    $\implies$ summen må være irrasjonal
-    \qed
-    
+    Et motsigelsesbevis ser vanligvis slik ut:
+    \begin{block}{Vis at $p$}
+        Anta at $p$ på en eller annen måte \emph{ikke} er sant.
+
+        \pause
+        Hadde ikke det vært ganske dumt?
+
+        \pause
+        Ja nettopp, jeg regner med du føler deg dum nå.
+
+        \pause
+        Derfor er $p$ sant.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Motsigelsesbevis}
+    \begin{block}{Summen av et rasjonalt tall $\frac{a}{b}$ og et irrasjonalt tall $c$ også er et irrasjonalt tall.}
+        Vi antar det motsatte, at summen blir et rasjonalt tall: \\
+        \pause
+        $\frac{a}{b}$ + $c$ = $\frac{e}{d}$ for $e, d \in \mathbb{Z}$.\\
+        \pause
+        $\implies \frac{e}{d} - \frac{a}{b} = c$\\
+        \pause
+        $\implies \frac{b\cdot d - a \cdot d}{b\cdot d} = c$\\
+        \pause
+        Men det impliserer at $c$ er et rasjonalt tall. \text{\Lightning}\\
+        \pause
+        Derfor er det usant at summen er et rasjonalt tall\\
+        $\implies$ summen må være irrasjonal
+        \qed
     \end{block}
 \end{frame}
 
@@ -78,20 +139,3 @@
     \pause
     Dette er altså ikke et komplett bevis. Vi må faktisk vise alle tilfeller før vi er ferdig.
 \end{frame}
-
-\begin{frame}{Motbevis}
-    For å bevise at en påstand er usann, holder det vanligvis bare å finne et moteksempel. Dette er vanligvis den letteste typen bevis.\\
-    OBS! Det er det eneste øyeblikket hvor det er ok å stoppe etter et eksempel.
-    \pause
-    \begin{block}{Påstand: det er ikke mulig å plassere 8 dronninger på et sjakkbrett uten at noen av dem truer hverandre.}
-    \pause
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.20]{images/8 queens.png}
-        % \caption{Motbevis}
-        \label{fig:my_label}
-    \end{figure}
-    
-    \end{block}
-\end{frame}
-
