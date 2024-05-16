@@ -64,7 +64,7 @@ Med andre ord: alle inputs gir et unikt output og alle piler peker på forskjell
         \label{fig:inj}%
     \end{figure}
     \pause
-    Observer at det finnes en injeksjon hvos og bare hvis $|B| \geq |A|$.
+    Observer at det finnes en injeksjon hvis og bare hvis $|B| \geq |A|$.
 \end{frame}
 
 \begin{frame}{Surjektivitet}
@@ -104,7 +104,8 @@ En funksjon $f : A \rightarrow B$ er \emph{Bijektiv} om den er både injektiv og
     Observer at det finnes en bijeksjon hvis og bare hvis $|A| = |B|$.
 \end{frame}
 
-\begin{frame}{Tavleoppgaver om injektivitet, surjektivitet, bijektivitet}
+\subsection{Tavleoppgaver}
+\begin{frame} % {Tavleoppgaver om injektivitet, surjektivitet, bijektivitet}
     \begin{itemize}
         \item Injektiv:  $\forall a_1, a_2 : [f(a_1) = f(a_2) \rightarrow a_1 = a_2]$.\\
         \item Surjektiv: $\forall b \in B$  $\exists a \in A : [f(a) = b]$.\\
@@ -112,11 +113,25 @@ En funksjon $f : A \rightarrow B$ er \emph{Bijektiv} om den er både injektiv og
     \end{itemize}
     \pause
     \begin{block}{Avgjør om de følgende funksjonene er injektive, surjektive, eller bijektive:}
-        $even : \mathbb{Z} \rightarrow $ Bool, $even(x) := x$ mod $2 = 0$\\
-        $f : \mathbb{R} \rightarrow \mathbb{R}$, $g(x) := e^x$\\
-        $g : \mathbb{R} \rightarrow \mathbb{R}^+$, $g(x) := e^x$\\
-        $h : \mathbb{R} \rightarrow \mathbb{R}$, $h(x) := 2x + 1$\\
-        $k : \mathbb{Q} \rightarrow \mathbb{N}$, $k(x) := 1$\\
+        \begin{columns}
+            \begin{column}{0.45\textwidth}
+                $f : \mathbb{Z} \rightarrow \mathbb{R}$\\
+                $f(x) := x^2$\\[1mm]
+                $even : \mathbb{Z} \rightarrow $ Bool\\
+                $even(x) := x$ mod $2 == 0$\\[1mm]
+                \pause
+                $h : \mathbb{R} \rightarrow \mathbb{R}$\\
+                $h(x) := 2x + 1$\\[1mm]
+            \end{column}
+            \pause
+            \begin{column}{0.45\textwidth}
+                $g : \mathbb{R} \rightarrow \mathbb{R}$\\
+                $g(x) := e^x$\\[1mm]
+                \pause
+                $h : \mathbb{R} \rightarrow \mathbb{R}^+$\\
+                $h(x) := e^x$
+            \end{column}
+        \end{columns}
     \end{block}
     \pause
     Noen kaller surjektive funksjoner for 'onto' på engelsk. Mens 'one-to-one', eller 1-1, kan bety enten bijektiv eller injektiv avhengig av hvem som sier det.

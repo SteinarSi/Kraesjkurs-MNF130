@@ -7,8 +7,7 @@
     \pause
     \begin{block}{Eksempel}
         Alle de følgende settene er like: \\
-        $\{1, 2, 3\}$, $\{3, 2, 1\}$ \\
-        $\{1, 1, 1, 1, 2, 2, 3, 3\}$
+        $\{1, 2, 3\}$ = $\{3, 2, 1\}$ = $\{1, 1, 1, 1, 2, 2, 3, 3\}$
     \end{block}
     
     \pause
@@ -20,28 +19,36 @@
 
 
 \begin{frame}{Kjente sett}
-    Flere sett bruker vi veldig ofte. Her er noen av dem.\\
+    Flere sett bruker vi veldig ofte, og har fått designerte symboler. Her er noen av dem.\\
     
     \begin{tabular}{c|l|c}
         Symbol & Navn & Innhold \\ \hline
         $\mathbb{N}_0$ & Naturlige tall & $\{0, 1, 2, 3, ....\}$\\
+        \pause
+        $\mathbb{N}_1$ & Naturlige tall & $\{1, 2, 3, ....\}$\\
+        \pause
+        $\mathbb{N}$ & Naturlige tall & ???\\
+        \pause
         $\mathbb{Z}$ & Heltall & $\{... -2, -1, 0, 1, 2, 3, ....\}$\\
+        \pause
         $\mathbb{Q}$ & Rasjonale tall & $\{-3/2, 1/10, 4/5, 5/4, ....\}$\\
-        $\mathbb{R}$ & Reelle tall & $\{\pi, e, 0.111111111..., 2\pi, .....\}$\\
+        \pause
+        $\mathbb{R}$ & Reelle tall & $\{\pi, e, 0.111111111..., -2\pi, .....\}$\\
+        \pause
         $\emptyset$ & Det tomme settet & $\{\}$
     \end{tabular}
-    
 \end{frame}
 
 \begin{frame}[fragile]{Settbyggingsnotasjon}
     Istedet for å manuelt skrive opp alle elementene i et sett, eller å bruke uformell \enquote{...}-notasjon, kan vi bruke setbyggingsnotasjon.
     \begin{block}{Eksempler}
-        $\{ x | x \in \mathbb{N}\}$ = $\mathbb{N}$\\
-        $\{ x \cdot 2 | x \in \mathbb{N}\}$ = $\{0, 2, 4, 6, 8, ....\}$\\
-        $\{x | x \in \mathbb{N}, x$ mod $3 = 0 \} = \{0, 3, 6, 9, ...\}$\\
-        $\{x/2 | x \in \mathbb{N}, x$ mod $3 = 0\} = \{0, 1.5, 3, 4.5, ...\}$
+        $\{ x ~ | ~ x \in \mathbb{N}\}$ = $\mathbb{N}$\\
+        $\{ x \cdot 2 ~ | ~ x \in \mathbb{N}\}$ = $\{0, 2, 4, 6, 8, ....\}$\\
+        $\{x ~ | ~ x \in \mathbb{N}, ~ x$ mod $3 = 0 \} = \{0, 3, 6, 9, ...\}$\\
+        $\{x/2 ~ | ~ x \in \mathbb{N}, ~ x$ mod $3 = 0\} = \{0, 1.5, 3, 4.5, ...\}$
     \end{block}
     \pause
+    Det ser skummelt ut, men det er bare forløkker.
     \begin{python}
 [ x for x in range(100) ]
 [ x*2 for x in range(100) ]
@@ -51,10 +58,10 @@
 \end{frame} 
 
 \begin{frame}{$\cup$, $\cap$, $\bar{}$ og $-$}
-    $A \cup B := \{x | x \in A \lor x \in B\}$ \\
-    $A \cap B := \{x | x \in A \land x \in B\}$\\
-    $A - B = A \backslash B := \{x | x \in A\land  x \notin B\}$\\
-    $A^C = \bar{A} := \{x | x \notin A\}$
+    $A \cup B := \{x ~ | ~ x \in A \lor x \in B\}$ \\
+    $A \cap B := \{x ~ | ~ x \in A \land x \in B\}$\\
+    $A^C = \bar{A} := \{x ~ | ~ x \notin A\}$\\
+    $A - B = A \backslash B := \{x ~ | ~ x \in A \land  x \notin B\} = A \cap \bar{B}$
     
     \begin{figure}%
         \centering
@@ -62,10 +69,9 @@
         \qquad
         \subfloat[\centering $A \cap B$]{{\includegraphics[width=2.5cm]{images/snitt.png} }}%
         \qquad
-        \subfloat[\centering $B - A$]{{\includegraphics[width=2.5cm]{images/minus.png} }}%
-        \qquad
         \subfloat[\centering $\bar{A}$]{{\includegraphics[width=2.5cm]{images/complement.png} }}%
-        % \caption{Vennediagramer}%
+        \qquad
+        \subfloat[\centering $B - A$]{{\includegraphics[width=2.5cm]{images/minus.png} }}%
         \label{fig:example2}%
     \end{figure}
 \end{frame}
@@ -91,6 +97,45 @@
     Obs! Enkelte skriver $\subset$ når de mener $\subseteq$, og $\subsetneq$ når de mener $\subset$.
 \end{frame}
 
+\begin{frame}{Nyttige regler for sett}
+    \begin{tabular}{l|c}
+    Ekvivalens & Navn \\ \hline
+    $A \cap U = A$ & Identity\\
+    $A \cup \emptyset = A$ \\ \hline
+    
+    $A \cup U = U$ & Domination\\
+    $A \cap \emptyset = \emptyset$\\ \hline
+    
+    $A \cup A = A$ & Idempotent\\
+    $A \cap A = A$ \\ \hline
+    
+    $A = (A^C)^C$ & Negation\\ \hline
+    
+    $A \cup B = B \cup A$ & Commutative\\
+    $A \cap B = B \cap A$ \\
+
+\end{tabular}
+\hfill
+    \begin{tabular}{l|c}
+    Ekvivalens & Navn \\ \hline
+    
+    $(A \cup B) \cup C = A \cup (B \cup C)$ & Associative\\
+    $(A \cap B) \cap C = A \cap (B \cap C)$ \\ \hline
+    
+    $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ & Distributive\\
+    $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ \\ \hline
+    
+    $(A \cap B)^C = A^C \cup B^C$ & De Morgan \\
+    $(A \cup B)^C = A^C \cap B^C$ \\ \hline
+    
+    $A \cup (A \cap B) = A$ & Absorption \\
+    $A \cap (A \cup B) = A$ \\ \hline
+    
+    $A \cup A^C = U$ & Negation \\
+    $A \cap A^C = \emptyset$ \\
+    \end{tabular}
+\end{frame}
+
 \begin{frame}{Tavleoppgaver fra H19}
     \begin{itemize}
         \item Vis eller motbevis at $(A - C) \cap (B - C) = \emptyset.$
@@ -105,46 +150,7 @@
         \item Er områdene til hele uttrykkene på hver side av = det samme?
     \end{enumerate}
     \pause
-    Alternativt: bruk definisjonene til $\cap$, $\cup$, etc til å omformulere uttrykket.
-\end{frame}
-
-\begin{frame}{Nyttige regler for sett}
-        \begin{tabular}{l|c}
-        Ekvivalens & Navn \\ \hline
-        $A \cap U = A$ & Identity\\
-        $A \cup \emptyset = A$ \\ \hline
-        
-        $A \cup U = U$ & Domination\\
-        $A \cap \emptyset = \emptyset$\\ \hline
-        
-        $A \cup A = A$ & Idempotent\\
-        $A \cap A = A$ \\ \hline
-        
-        $A = (A^C)^C$ & Negation\\ \hline
-        
-        $A \cup B = B \cup A$ & Commutative\\
-        $A \cap B = B \cap A$ \\
-
-    \end{tabular}
-    \hfill
-        \begin{tabular}{l|c}
-        Ekvivalens & Navn \\ \hline
-        
-        $(A \cup B) \cup C = A \cup (B \cup C)$ & Associative\\
-        $(A \cap B) \cap C = A \cap (B \cap C)$ \\ \hline
-        
-        $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ & Distributive\\
-        $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ \\ \hline
-        
-        $(A \cap B)^C = A^C \cup B^C$ & De Morgan \\
-        $(A \cup B)^C = A^C \cap B^C$ \\ \hline
-        
-        $A \cup (A \cap B) = A$ & Absorption \\
-        $A \cap (A \cup B) = A$ \\ \hline
-        
-        $A \cup A^C = U$ & Negation \\
-        $A \cap A^C = \emptyset$ \\
-        \end{tabular}
+    Alternativt: bruk regnereglene for $\cap$, $\cup$, etc til å omformulere uttrykket.
 \end{frame}
 
 \begin{frame}{Kardinalitet}
