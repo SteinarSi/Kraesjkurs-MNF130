@@ -1,6 +1,6 @@
 \subsection{Mengder}
 \begin{frame}{Sett / Mengder}
-    Et sett, eller en mengde, er en slags liste av objekter, men med to forskjeller:\\
+    Et sett, eller en mengde, er en slags liste av objekter, bortsett fra:\\
     \indent \hspace{3mm}    1. Det inneholder ingen duplikater\\
     \indent \hspace{3mm}    2. Det har ingen konkret rekkefølge
     
@@ -42,12 +42,12 @@
         $\{x/2 | x \in \mathbb{N}, x$ mod $3 = 0\} = \{0, 1.5, 3, 4.5, ...\}$
     \end{block}
     \pause
-    \begin{minted}[fontsize=\scriptsize]{python}
-\[ x for x in range(100) \]
-\[ x*2 for x in range(100) \]
-\[ x for x in range(100) if x % 3 == 0 \]
-\[ x/2 for x in range(100) if x % 3 == 0 \]
-    \end{minted}
+    \begin{python}
+[ x for x in range(100) ]
+[ x*2 for x in range(100) ]
+[ x for x in range(100) if x % 3 == 0 ]
+[ x/2 for x in range(100) if x % 3 == 0 ]
+    \end{python}
 \end{frame} 
 
 \begin{frame}{$\cup$, $\cap$, $\bar{}$ og $-$}

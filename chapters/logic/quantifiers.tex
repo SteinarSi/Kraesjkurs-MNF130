@@ -17,7 +17,7 @@
 
 \begin{frame}[fragile]{Kvantorer i praksis}
     Kvantorer ser skumle ut, men det er bare for-løkker.
-    \begin{minted}[fontsize=\scriptsize]{python}
+    \begin{python}
 def forall(p, xs):
     for x in xs:
         if not p(x):
@@ -29,7 +29,7 @@ def exists(p, xs):
         if p(x):
             return True
     return False
-    \end{minted}
+    \end{python}
     
     \pause
     \begin{itemize}
