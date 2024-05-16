@@ -67,15 +67,14 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
 \end{frame}
 
 \begin{frame}[fragile]{Symmetriske relasjoner}
-    En relasjon $R$ er \emph{symmetrisk} hvis $\forall a, b : [(a, b) \in R \leftrightarrow (b, a) \in R]$.\\
+    En relasjon $R$ er \emph{symmetrisk} hvis $\forall a, b : (a, b) \in R \rightarrow (b, a) \in R$.\\
     \begin{columns}
         \begin{column}{0.3\textwidth}
             Ikke symmetrisk:\\
             \adjustbox{scale=0.8}{
                 \begin{tikzcd}
-                    a \arrow[dd]   &  & b                                             \\
-                                   &  &                                               \\
-                    c \arrow[rruu] &  & d \arrow[loop, distance=2em, in=305, out=235]
+                    a \arrow[d, bend right]            & b                                            \\
+                    c \arrow[ru] \arrow[u, bend right] & d \arrow[loop, distance=2em, in=35, out=325]
                 \end{tikzcd}
             }
         \end{column}
@@ -84,9 +83,8 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
             Symmetrisk:\\
             \adjustbox{scale=0.8}{
                 \begin{tikzcd}
-                    a \arrow[dd, bend left]                          &  & b \arrow[lldd, bend right]                    \\
-                                                                     &  &                                               \\
-                    c \arrow[rruu, bend right] \arrow[uu, bend left] &  & d \arrow[loop, distance=2em, in=305, out=235]
+                    a \arrow[d, bend right]                        & b \arrow[ld, bend right]                     \\
+                    c \arrow[ru, bend right] \arrow[u, bend right] & d \arrow[loop, distance=2em, in=35, out=325]
                 \end{tikzcd}
             }
         \end{column}
@@ -99,7 +97,7 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
                       & a & b & c & d\\
                     a & 0 & 0 & 1 & 0\\
                     b & 0 & 0 & 0 & 0\\
-                    c & 0 & 1 & 0 & 0\\
+                    c & 1 & 1 & 0 & 0\\
                     d & 0 & 0 & 0 & 1
                 \end{matrix}
             \end{math}
@@ -125,9 +123,8 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
             Ikke antisymmetrisk:\\
             \adjustbox{scale=0.8}{
                 \begin{tikzcd}
-                a \arrow[dd, bend left]                          &  & b \arrow[lldd, bend right]                    \\
-                                                                 &  &                                               \\
-                c \arrow[rruu, bend right] \arrow[uu, bend left] &  & d \arrow[loop, distance=2em, in=305, out=235]
+                    a \arrow[d, bend right]            & b                                            \\
+                    c \arrow[ru] \arrow[u, bend right] & d \arrow[loop, distance=2em, in=35, out=325]
                 \end{tikzcd}
             }
         \end{column}
@@ -152,7 +149,7 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
                 \begin{matrix}
                       & a & b & c & d\\
                     a & 0 & 0 & 1 & 0\\
-                    b & 0 & 0 & 1 & 0\\
+                    b & 0 & 0 & 0 & 0\\
                     c & 1 & 1 & 0 & 0\\
                     d & 0 & 0 & 0 & 1
                 \end{matrix}
@@ -173,7 +170,7 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
 \end{frame}
 
 \begin{frame}[fragile]{Transitive relasjoner}
-    En relasjon $R$ er \emph{transitiv} om $\forall a, b, c : [(a, b) \in R \land (b, c) \in R \rightarrow (a, c) \in R]$.\\
+    En relasjon $R$ er \emph{transitiv} om $\forall a, b, c : (a, b), (b, c) \in R \rightarrow (a, c) \in R$.\\
     \begin{columns}
         \begin{column}{0.3\textwidth}
             Ikke transitiv:
@@ -188,6 +185,27 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
             \begin{tikzcd}
             a \arrow[r] \arrow[d] \arrow[rd] & b \arrow[d] \\
             d                                & c          
+            \end{tikzcd}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Ekvivalenserelasjoner}
+    En ekvivalenserelasjon $R \subseteq A \times A$ er en \emph{ekvivalenserelasjon} om den er både refleksiv, symmetrisk, og transitiv. Da oppfører den seg mye som $=$ og $\equiv$ gjør.\\
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            Ikke en ekvivalenserelasjon:
+            \begin{tikzcd}
+                a \arrow[d, bend right]            & b                                                      & e \\
+                c \arrow[ru] \arrow[u, bend right] & d \arrow[r] \arrow[loop, distance=2em, in=125, out=55] & c
+            \end{tikzcd}
+        \end{column}
+        \pause
+        \begin{column}{0.4\textwidth}
+            En ekvivalenserelasjon:
+            \begin{tikzcd}
+                a \arrow[d, bend right] \arrow[loop, distance=2em, in=125, out=55] \arrow[r, bend left]    & b \arrow[loop, distance=2em, in=125, out=55] \arrow[ld, bend right] \arrow[l, bend left] & e \arrow[loop, distance=2em, in=125, out=55]                        \\
+                c \arrow[ru, bend right] \arrow[u, bend right] \arrow[loop, distance=2em, in=305, out=235] & d \arrow[r, bend right] \arrow[loop, distance=2em, in=305, out=235]                      & c \arrow[loop, distance=2em, in=305, out=235] \arrow[l, bend right]
             \end{tikzcd}
         \end{column}
     \end{columns}
