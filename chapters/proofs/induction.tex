@@ -1,57 +1,53 @@
 \subsection{Induksjon}
 \begin{frame}{Matematisk induksjon}
-    Et induksjonsbevis for en påstand $P(x)$ består av to steg:\\
-    \begin{itemize}
-        \item Vis at $P(0)$ stemmer
-        \item Vis at om $P(n)$ stemmer, må $P(n+1)$ stemme
-    \end{itemize}
-    Dermed har vi bevist at $\forall x : [ x \geq 0 \rightarrow P(x)]$
-    
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.1]{images/domino.PNG}
-        % \caption{}
-        \label{fig:my_label1}
-    \end{figure}
+    \begin{columns}
+        \begin{column}{0.65\textwidth}
+            Et induksjonsbevis for en påstand $P(x)$ består av to steg:
+            \begin{itemize}
+                \item Vis at $P(0)$ stemmer
+                \item Vis at om $P(k)$ stemmer, må $P(k+1)$ stemme
+            \end{itemize}\\[2mm]
+        
+            \pause
+            Siden $P(0)$ stemmer, må $P(1)$ stemme, og\\
+            Siden $P(1)$ stemmer, må $P(2)$ stemme, og\\
+            ...\\
+            Siden $P(k)$ stemmer, må $P(k+1)$ stemme.\\[1.5mm]
+        
+            \pause
+            Dermed har vi bevist at $\forall x : x \geq 0 \rightarrow P(x)$.
+        \end{column}
+        \pause
+        \begin{column}{0.2\textwidth}
+            \begin{figure}
+                \includegraphics[scale=0.1,left]{images/domino.PNG}
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
-\begin{frame}{Apen og Stigen} %bild?
-    Apen står på trinn 0.\\
-    
-    Hvis apen viser deg at den kan klatre opp til trinn 1, vet du om den kan klatre opp til trinn k?\\
-\pause
-    Nei, du vet bare at den kan klatre opp til trinn 1.\\
-    
-\pause
-    Hvis apen viser deg at den kan klatre opp fra et vilkårlig trinn til det neste, vet du nå om den kan klatre opp til trinn k?\\
-\pause
-    Ja, vi vet at den allerede står på trinn 0 og den kan klatre fra er trinn til neste. Den kan derfor klatre opp hvert trinn.
-    
-\end{frame}
 \begin{frame}{Eksempel på matematisk induksjon}
-    Vis at $\sum_{i=0}^{n} i = \frac{n(n+1)}{2}$.\\
+    Vis at $\sum_{i=0}^{n} i = 0 + 1 + 2 + ... + n = \frac{n(n+1)}{2}$.\\[4mm]
 \pause    
-    Vi lar $P(n) := \sum_{i=0}^{n} i = \frac{n(n+1)}{2}$\\%kan jeg aendre fra x til n?
-    
-\pause 
-    Vis at $P(0)$ stemmer\\
+    Vi lar $P(k) := \sum_{i=0}^{k} i = \frac{k(k+1)}{2}$\\[2mm]
 \pause
-    Vi begynner med base case, at påstanden holder for $P(0)$.\\
+    Vi begynner med base case, at påstanden holder for $P(0)$:\\
     $P(0): \sum_{i=0}^{0} i = \frac{0(0+1)}{2} = 0$ \checkmark\\
 \end{frame}
 
 \begin{frame}{Eksempel på matematisk induksjon (fortsettelse)}
-    Vis at om $P(n)$ stemmer, må $P(n+1)$ stemme\\
-    Nå antar vi at påstanden holder for $n$: \\
-    $P(n): \sum_{i=0}^{n} i = \frac{n(n+1)}{2}$\\
-    Nå viser vi at det medfører at påstanden også må hold for $n+1$:\\
-    $P(n+1): \sum_{i=0}^{n+1} i = \frac{(n+1)((n+1)+1)}{2} = \frac{(n+1)(n+2)}{2}$\\
+    Vis at om $P(k)$ stemmer, må $P(k+1)$ stemme.\\[2mm]
+    Induksjonshypotesen vår er at påstanden holder for $k$: \\
+    $P(k): \sum_{i=0}^{k} i = \frac{k(k+1)}{2}$\\[2mm]
 
-    $\sum_{i=0}^{n+1} i =1 + 2 + ... + n + (n+1) = (\sum_{i=0}^{n} i )+ (n+1)$\\
+    Nå vil vi vise at det medfører at påstanden også må holde for $k+1$:\\
+    $P(k+1): \sum_{i=0}^{k+1} i = \frac{(k+1)((k+1)+1)}{2} = \frac{(k+1)(k+2)}{2}$\\
+
+    $\sum_{i=0}^{k+1} i = 0 + 1 + 2 + ... + k + (k+1) = (\sum_{i=0}^{k} i )+ (k+1)$\\
 \pause
-    med $P(n)$ $\implies \frac{n(n+1)}{2} + n + 1$\\
-    $ = \frac{n(n+1)}{2}+\frac{2(n+1)}{2} = \frac{n(n+1)+2(n+1)}{2}$\\
-    $ = \frac{(n+1)(n+2)}{2}$ \checkmark
+    $=\frac{k(k+1)}{2} + k + 1$\\
+    $= \frac{k(k+1)}{2}+\frac{2(k+1)}{2} = \frac{k(k+1)+2(k+1)}{2}$\\
+    $= \frac{(k+1)(k+2)}{2}$ \checkmark
 \end{frame}
 
 \begin{frame}{Sterk induksjon}
@@ -61,18 +57,19 @@
     Hvis du allerede forstår induksjon, trenger du ikke definisjon for sterk induksjon. Du kan gjørde det med intuisjon.
 \end{frame}
 
+\subsection{Rekursjon}
 \begin{frame}{Rekursive funksjoner}
     En rekursiv funksjon er en funksjon som refererer til seg selv.
     \pause
     \begin{block}{fakultet}
         0! := 1 \\
-        n! := n * (n-1)!\\
+        n! := n \cdot (n-1)!\\
     \end{block}    
     \pause 
-    3! = 3 * 2!\\
-     = 3 * 2 * 1!\\
-     = 3 * 2 * 1 * 0!\\
-     = 3 * 2 * 1 * 1\\
+    3! = 3 \cdot ~ 2!\\
+     = 3 \cdot 2 \cdot 1!\\
+     = 3 \cdot 2 \cdot 1 \cdot 0!\\
+     = 3 \cdot 2 \cdot 1 \cdot 1\\
      = 6
 \end{frame}
 
@@ -91,7 +88,7 @@
 \end{frame}
 
 \begin{frame}{Rekursive definisjoner}
-    Som med funksjoner kan vi også definere andre strukturer rekursivt. Med 'andre strukturer' mener vi sett 90\% av tiden.\\
+    Som med funksjoner kan vi også definere andre strukturer rekursivt.\\
     
     De defineres med et basissteg, dvs utgangspunktet, og et rekursivt steg for å utvide det.\\
     
@@ -103,25 +100,31 @@
     \end{block}
 \end{frame}
 
+\subsection{Strukturell induksjon}
 \begin{frame}{Strukturell induksjon}
-    Ofte vil vi bevise egenskaper for rekursive strukturer.\\
-    Det gjøres ved to steg:\\
+    Ofte vil vi bevise egenskaper for rekursive strukturer. Det gjøres ved to steg:
     \begin{itemize}
-        \item Basissteget: vis at egenskap holder for strukturens basissteg.
-        \item Det rekursive steget: vis at om en egenskap allerede holder for en struktur, vil en runde med rekursjon opprettholde den egenskapen.
+        \item Basissteget: vis at strukturen i utgangspunktet har egenskapen.
+        \item Det rekursive steget: vis at om en struktur allerede har en egenskap, vil en runde med rekursjon opprettholde den egenskapen.
     \end{itemize}
     
     \pause
     \begin{block}{Vis at alle tall i $\mathbb{S}$ er delelige på 7.}
+        \pause
         Basisteget: $\mathbb{S}$ inneholder bare $7$, og $7$ mod $7$ = 0. \checkmark\\
-        Rekursive steget: Vi antar at et tall $a \in \mathbb{S}$ er delelige på 7. Så $a = 7k$, $k \in \mathbb{N}$\\
-        Vi vet at også $10a \in \mathbb{S}$.\\
-        $10a=10 * 7k$ så alle tall i $\mathbb{S}$ er delelige på 7.\checkmark
+        \pause
+        Rekursive steget: Vi antar at alle tall $a \in \mathbb{S}$ er delelig på 7. Så $a = 7k$, $k \in \mathbb{N}$.\\
+        \pause
+        I neste rekursjon legger vi til $10a$ i $\mathbb{S}$.\\
+        \pause
+        $10a=10 \cdot 7k$, og er også delelig på 7. En runde rekursjon opprettholder egenskapen.\checkmark\\
+        \pause
+        Derfor er alle tall i $\mathbb{S}$ delelige på 7.
     \end{block}
 \end{frame}
 
 \begin{frame}{Større eksempel på strukturell induksjon}
-    Basissteg: $(0, 0) \in \mathbb{T}$\\
+    Basissteg: $(0, 0) \in \mathbb{T}$.\\
     Rekursivt steg: $(a, b) \in \mathbb{T} \rightarrow (a+1, b) \in \mathbb{T} \land (a+1, b+1) \in \mathbb{T}$.\\
     
     Oppgave: vis at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.\\
@@ -134,4 +137,22 @@
         \item Om $a \geq b$ er $a+1 \geq b+1$. \checkmark
     \end{itemize}
     Dermed kan vi konkludere med at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.
+\end{frame}
+
+\begin{frame}[fragile]{Strukturell induksjon i praksis}
+    \begin{lstlisting}[language=Java]
+public class SimpleList<T> {
+    private final T[] content;
+    private int size = 0;
+    public SimpleList(int capacity) {
+        content = (T[]) new Object[capacity];
+    }
+    public void add(T element) {
+        content[size] = element;
+        size++;
+    }
+    public T get(int index) { return content[index]; }
+    public int size() { return size; }
+}
+    \end{lstlisting}
 \end{frame}
