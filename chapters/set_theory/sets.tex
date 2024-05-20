@@ -27,7 +27,7 @@
         \pause
         $\mathbb{N}_1$ & Naturlige tall & $\{1, 2, 3, ....\}$\\
         \pause
-        $\mathbb{N}$ & Naturlige tall & ???\\
+        $\mathbb{N}$ & Naturlige tall & Enten $\mathbb{N}_0$ eller $\mathbb{N}_1$\\
         \pause
         $\mathbb{Z}$ & Heltall & $\{... -2, -1, 0, 1, 2, 3, ....\}$\\
         \pause
@@ -151,6 +151,33 @@
     \end{enumerate}
     \pause
     Alternativt: bruk regnereglene for $\cap$, $\cup$, etc til å omformulere uttrykket.
+\end{frame}
+
+\begin{frame}{Tricky oppgave}
+Vi har to sett $A$ og $B$, og vi får vite at $A - B = \emptyset$. Hva vet vi da om $A$ og $B$?\\[3mm]
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            \begin{itemize}
+                \item $A = \emptyset$
+                \item $B = \emptyset$
+                \item $A \subset B$
+                \item $A \subseteq B$
+                \item $B \subset A$
+                \item $B \subseteq A$
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.3\textwidth}
+            \begin{itemize}
+                \item $A \cap B \neq \emptyset$
+                \item $A \neq B$
+                \item $A = B$
+                \item $B - A \neq \emptyset$
+                \item $B - A = \emptyset$
+                \item $A \cup B = \emptyset$
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    
 \end{frame}
 
 \begin{frame}{Kardinalitet}

@@ -5,7 +5,7 @@ Hvis du skal holde ditt eget kræsjkurs i MNF130 og tenker å ta utgangspunkt i 
 Kurset som det er tok 5t 55min, inkludert korte pauser ca hver time og en litt lengre pause når pizzaene kom.
 Det er ganske lenge å holde oppmerksomheten, så enkelte seksjoner bør kanskje kuttes ned.
 
-- [ ] I tillegg bør mer forarbeid gjøres med foreleseren, for å avklare forventningene til hva de de skal kunne og hvor presist de skal svare på forskjellige oppgaver.
+- [x] I tillegg bør mer forarbeid gjøres med foreleseren, for å avklare forventningene til hva de de skal kunne og hvor presist de skal svare på forskjellige oppgaver.
 Spesielt på bevisoppgaver (som kanskje og kanskje ikke inkluderer alle oppgaver som begynner med 'vis at...') er det uklart hvor formelt de bør svare.
 Kort sagt bør foreleseren melkes mest mulig for all info hen er villig til å dele om hva slags oppgaver de får og hvordan de skal besvares.
 
@@ -16,18 +16,18 @@ Kort sagt bør foreleseren melkes mest mulig for all info hen er villig til å d
   Vi kan antagelig korte ned dette kapitlet.
 
 ### Mengdelære
-- [ ] Mer fokus bør legges på hvordan gjøre oppgaver og beviser på mengder uten å kun tegne vennediagrammer.
+- [x] Mer fokus bør legges på hvordan gjøre oppgaver og beviser på mengder uten å kun tegne vennediagrammer.
   Diagrammene fungerer utmerket for å visualisere en oppgave og se hva man egentlig skal gjøre, men ofte vil de få beviser der de for eksempel er påkrevd å gjøre dem med mengdeidentiteter.
   Ifølge Erik er et vennediagram med en setning som refererer til det i utgangspunktet et fullstendig bevis, men det er for mange måter man kan misbruke dem og skape tvetydige resultater.
   Derfor vil han gi oppgaver der vennediagrammer ikke er lov.
   Men jeg tenker likevel det fortsatt er lurt å skisse et diagram for seg selv før man begynner på beviset.
 
-- [ ] Litt det samme gjelder beviser for injektivitet og surjektivitet.
-Å tegne piler mellom bobler, og skisse funksjoner i et plan, er fantastisk for å visualisere hva man skal gjøre, men er ikke et selv et fullstendig bevis.
+- [x] Litt det samme gjelder beviser for injektivitet og surjektivitet.
+Å tegne piler mellom bobler, og skisse funksjoner i et plan, er fantastisk for å visualisere hva man skal gjøre, men er ikke i seg selv et fullstendig bevis.
 Mer fokus bør rettes på hvordan føre et ordentlig bevis.
 Det vil si å anta at `f(a)=f(b)` og vise at det medfører at `a=b`, og tilsvarende vise at alle `b` har en `a` slik at `f(a)=b`.
 
-- [ ] Vis gjerne også hvordan man kan gjøre oppgaven der vi får vite at `A \ B = Ø` og blir spurt om å avgjøre hva vi da vet om `A` og `B`.
+- [x] Vis gjerne også hvordan man kan gjøre oppgaven der vi får vite at `A \ B = Ø` og blir spurt om å avgjøre hva vi da vet om `A` og `B`.
 Svaret er at `A` er en undermengde av `B`, og det kan vi se umiddelbart når vi tegner et diagram.
 
 ### Relasjoner
@@ -68,7 +68,3 @@ Så skal vi tilbake til de lette temaene etterpå."
 ### Algoritmer
 
 ### Grafer
-- [ ] Vi glemte å gå igjennom binære søketrær, vi har bare lysbilder på trær generelt.
-
-
-
