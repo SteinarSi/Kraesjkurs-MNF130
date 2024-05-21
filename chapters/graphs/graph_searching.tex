@@ -1,4 +1,4 @@
-\subsection{Grafsøk}
+\subsection*{Grafsøk}
 \begin{frame}{Søk}
     Om vi har en graf, er det hovedsakelig to måter vi kan søke igjennom grafen: 
     \begin{itemize}
@@ -8,11 +8,11 @@
     Forskjellen ligger i når hver node blir søkt.
 \end{frame}
 
-\begin{frame}[fragile]{BFS}
+\begin{frame}[fragile]{BFS: Bredde-Først-Søk}
     Vi holder styr på hvilken 'generasjon' med noder vi jobber med. For hver generasjon ser vi etter alle noder som den generasjonen kan nå, og det er neste generasjon.
     \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{minted}[fontsize=\scriptsize]{python}
+        \begin{column}{0.67\textwidth}
+            \begin{python}
 def bfs(start, graph):
     visited = { u: False for u in graph }
     visited[start] = True
@@ -26,38 +26,34 @@ def bfs(start, graph):
                     next_gen.append(v)
                     visited[v] = True
         current_gen, next_gen = next_gen, []
-            \end{minted}
+            \end{python}
         \end{column}
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.35\textwidth}
             \begin{figure}
                 \centering
                 \includegraphics[height=4cm]{images/bfs.png}
-                %\caption{Rekkefølgen nodene blir søkt med BFS}
-                \label{fig:bfs}
             \end{figure}   
         \end{column}
     \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{DFS}
+\begin{frame}[fragile]{DFS: Dybde-Først-Søk}
     Her går vi heller i dybden først. Hver gang vi oppdager en ny node søker vi den umiddelbart før vi går tilbake igjen.
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \begin{minted}[fontsize=\scriptsize]{python}
+            \begin{python}
 def dfs(start, graph, visited):
     print(start)
     visited[start] = True
     for v in graph[start]:
         if not visited[v]:
             dfs(v, graph, visited)
-            \end{minted}
+            \end{python}
         \end{column}
         \begin{column}{0.45\textwidth}
             \begin{figure}
                 \centering
                 \includegraphics[height=4cm]{images/dfs.png}
-                %\caption{Rekkefølgen nodene blir søkt med DFS}
-                \label{fig:bfs}
             \end{figure}   
         \end{column}
     \end{columns}

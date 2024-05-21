@@ -12,7 +12,7 @@ Kort sagt bør foreleseren melkes mest mulig for all info hen er villig til å d
 ## Kapitlene
 
 ### Logikk
-- [ ] Tradisjonelt sett har dette vært noe av det studentene har best kontroll på.
+- [x] Tradisjonelt sett har dette vært noe av det studentene har best kontroll på.
   Vi kan antagelig korte ned dette kapitlet.
 
 ### Mengdelære
@@ -56,7 +56,7 @@ Så skal vi tilbake til de lette temaene etterpå."
   For eksempel er det lett å løse ligningen `3x = 4` ved å gange med `1/3` på hver side, men om vi er i en modklasse kan vi ikke gjøre det fordi tallet `1/3` eksisterer ikke.
 
 ### Kryptografi
-- [ ] De aller fleste studentene har allerede vært igjennom både symmetrisk og asymmetrisk kryptografi i INF140 før de begynte på MNF130.
+- [x] De aller fleste studentene har allerede vært igjennom både symmetrisk og asymmetrisk kryptografi i INF140 før de begynte på MNF130.
   Unntaket er IMØ-folk, som ikke har 140 før på tredje året.
   Derfor kan vi vurdere å enten droppe temaet eller korte det ned veldig.
 
