@@ -2,16 +2,19 @@
 \begin{frame}{Kvantorer (/Quantifiers)}
     \begin{itemize}
         \item Ofte vil vi si noe om et predikat $P(x)$, men for flere potensielle $x$ samtidig.
+        \pause
         \item $\forall x : P(x)$ = $x_1 \land x_2 \land ... \land x_n$ = ''For alle $x$ er det sant at $P(x)$''
+        \pause
         \item $\exists x : P(x)$ = $x_1 \lor x_2 \lor ... \lor x_n$ = ''Det eksisterer en $x$ slik at det er sant at $P(x)$''
+        \pause
         \item $\exists x \in S : P(x)$ = ''Det eksisterer en $x$ i settet $S$ slik at  det er sant at $P(x)$''
     \end{itemize}
     
     \pause
     \begin{block}{Eksempler}
-        $\forall x : (x < x + 1)$ = ''For alle x er det sant at $x < x +1$''\\
-        $\exists x : (x > x^2)$ = ''Det eksisterer en x slik at det er sant at $x > x^2$''\\
-        $\exists x \in \mathbb{N} : (x*x = 1)$\\
+        $\forall x : x < x + 1$ = ''For alle x er det sant at $x < x +1$''\\
+        $\exists x : x > x^2$ = ''Det eksisterer en x slik at det er sant at $x > x^2$''\\
+        $\exists x \in \mathbb{N} : x \cdot x = 1$\\
     \end{block}
 \end{frame}
 
@@ -33,8 +36,8 @@ def exists(p, xs):
     
     \pause
     \begin{itemize}
+        \item forall(p, xs) = $\forall x \in xs : p(x)$        
         \item exists(p, xs) = $\exists x \in xs : p(x)$
-        \item forall(p, xs) = $\forall x \in xs : p(x)$
     \end{itemize}
 \end{frame}
 
@@ -45,10 +48,14 @@ def exists(p, xs):
         \item Om vi har flere like kvantorer etter hverandre kan vi slå dem sammen med tupler.
     \end{itemize}
     
+    \pause
     \begin{block}{Eksempler}
         $\forall x \forall y : (x^2 + y^2 \geq 0) = \forall x, y : (x^2 + y^2 \geq 0)$ \\
+        \pause
         $\forall x \exists y : (x * y = 1)$ = ''For alle x eksisterer det en y slik at $x * y = 1$'' \\
+        \pause
         $\exists x \forall y : (x^2 \leq y^2)$ = ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
+        \pause
         $\lnot \exists n, a, b, c \in \mathbb{Z} : (n > 2 \land a^n + b^n = c^n)$\\
         %$\lnot \exists n \exists a \exists b \exists c (a,b,c,n \in Z \land n > %2 \land a^n + b^n = c^n)$
     \end{block}
