@@ -23,17 +23,17 @@ $gcd(a,b) = 1$ $\rightarrow lcm(a,b) = a\cdot b$
 \begin{frame}[fragile]{Euklids algoritme}
 \begin{columns}
     \begin{column}{0.45\textwidth}
-\begin{minted}[fontsize=\scriptsize]{python}
+\begin{python}
 def gcd(a, b):
     while b != 0:
         r = a % b
         a = b
         b = r
     return a
-\end{minted}
+\end{python}
  	\end{column}
  	\pause
-    \begin{column}{0.45\textwidth}
+    \begin{column}{0.45\textwidth} % Kanskje ta et litt lengre eksempel? Og legge til en understrek på det som blir gcd.
     \begin{center}
        gcd(28,12)\\
        
