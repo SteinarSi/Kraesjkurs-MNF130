@@ -23,6 +23,7 @@
 \usepackage{adjustbox}
 \usepackage{minted,xcolor}
 \usepackage{caption}
+\usepackage{soul}
 \usepackage{pythonhighlight}
 \usepackage{subcaption}
 \usetikzlibrary{cd}
@@ -31,8 +32,17 @@
 \usepackage{csquotes}
 \usepackage{pifont}
 \usepackage[normalem]{ulem}
-\newcommand{\cmark}{\ding{51}}%
-\newcommand{\xmark}{\ding{55}}%
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\def\mathunderline#1#2{\color{#1}\underline{{\color{black}#2}}\color{black}}
+\makeatletter
+\let\HL\hl
+\renewcommand\hl{%
+  \let\set@color\beamerorig@set@color
+  \let\reset@color\beamerorig@reset@color
+  \HL}
+\makeatother
 \usemintedstyle{monokai} %vs
 %\definecolor{bg}{HTML}{282828}
 \definecolor{bg}{RGB}{40, 40, 40}

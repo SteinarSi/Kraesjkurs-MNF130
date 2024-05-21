@@ -1,22 +1,36 @@
-\subsection*{Primtall, Greatest common divisor, Least common multiple}
-\begin{frame}
-\begin{block}{Primtall}
-Et tall som bare kan deles av seg selv og 1\\
-Eksempler: 2,3,5,7,11,13,...
-\end{block}
-\pause
-\begin{block}{Største felles faktor (/Greatest common divisor)}
-$gcd(a,b) := $det største tallet som deler både a og b\\
-Eksempel: $gcd(4,6)=2$\\
-Co-prime: a og b er co-prime dersom $gcd(a,b)=1$
-\end{block}
-\pause
-\begin{block}{Laveste felles multiplum (/Least common multiple)}
-$lcm(a,b) := $ det minste tallet som kan deles av både a og b\\
-Eksempel: $lcm(4,6)=12$\\
-hvis $a\cdot b=gcd(a,b)\cdot lcm(a,b)$\\
-$gcd(a,b) = 1$ $\rightarrow lcm(a,b) = a\cdot b$
-\end{block}
+\subsection*{GCD, LCM}
+
+\begin{frame}{GCD}
+    La oss si at vi har en brøk: $\frac{12}{18}$. Hvordan forenkle den?\\
+    \pause
+    Vi deler telleren og nevneren på 6, og får $\frac{2}{3}$. Men hvorfor 6?\\
+    \pause
+    Fordi 6 er det største tallet som deler både $12$ og $18$. Den største felles faktoren er 6.
+
+    \begin{block}{Største felles faktor (/Greatest Common Divisor)}
+        $gcd(a,b) := $ det største tallet som deler både a og b\\
+        Eksempel: $gcd(12, 18) = 6$.
+    \end{block}
+
+    \pause
+    \begin{block}{Relativt primisk (/co-prime)}
+        To heltall $a$ og $b$ kalles \emph{relativt prime}, eller \emph{co-prime}, dersom $gcd(a,b)=1$.\\
+        Eksempel: $8$ og $21$ er relativt prime, siden $gcd(8,21) = 1$.
+    \end{block}
+\end{frame}
+
+\begin{frame}{LCM}
+    Vi har en sum av to brøker: $\frac{5}{18} + \frac{7}{12}$. Hvordan forenkle det?\\
+    \pause
+    Vi ganger den venstre med 2, og den høyre med 3, så begge får 36 i nevneren:\\
+     $\frac{10}{36} + \frac{21}{36} = \frac{31}{36}$. Men hvorfor 36?\\
+    \pause
+    Fordi 36 er det laveste tallet som begge nevnerene kan ganges opp til, deres laveste felles multiplum er 36.
+    \begin{block}{Laveste felles multiplum (/Least common multiple)}
+        $lcm(a,b) :=$ det minste tallet som kan deles av både a og b\\
+        Eksempel: $lcm(18,12)=36$\\
+        Det er alltid sant at $a \cdot b = lcm(a,b) \cdot gcd(a,b)$, så vi kan regne ut $LCM$ med $lcm(a,b) = \frac{a \cdot b}{gcd(a,b)}$.
+    \end{block}
 \end{frame}
 
 \subsection*{Euklids algoritme}
@@ -33,15 +47,21 @@ def gcd(a, b):
 \end{python}
  	\end{column}
  	\pause
-    \begin{column}{0.45\textwidth} % Kanskje ta et litt lengre eksempel? Og legge til en understrek på det som blir gcd.
-    \begin{center}
-       gcd(28,12)\\
-       
-    $28=2\cdot 12+4$\\
-    $12=3\cdot 4+0$\\
-    
-    gcd(28,12)=4 
-    \end{center}
+    \begin{column}{0.45\textwidth}
+        $gcd($\mathunderline{red}{1180},$\mathunderline{blue}{482}):$\\[2mm]
+        \pause
+        $\mathunderline{red}{1180} = 2 \cdot \mathunderline{blue}{482} + \mathunderline{green}{216}$\\
+        \pause
+        $\mathunderline{blue}{482} = 2 \cdot \mathunderline{green}{216} + \mathunderline{red}50$\\
+        \pause
+        $\mathunderline{green}{216} = 4 \cdot \mathunderline{red}{50} + \mathunderline{blue}{16}$\\
+        \pause
+        $\mathunderline{red}{50} = 3 \cdot \mathunderline{blue}{16} + \underline{2}$\\
+        \pause
+        $\mathunderline{blue}{16} = 8 \cdot \underline{2} + 0$\\[2mm]
+
+        \pause
+        $gcd(1180,482) = 2$.
  	\end{column}
 \end{columns}
 
