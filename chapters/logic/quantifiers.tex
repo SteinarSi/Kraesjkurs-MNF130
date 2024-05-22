@@ -1,5 +1,5 @@
 \subsection{Kvantorer}
-\begin{frame}{Kvantorer (/Quantifiers)}
+\begin{frame}{Kvantorer (Quantifiers)}
     \begin{itemize}
         \item Ofte vil vi si noe om et predikat $P(x)$, men for flere potensielle $x$ samtidig.
         \pause
@@ -41,7 +41,7 @@ def exists(p, xs):
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Nøstede kvantorer (/Nested quantifiers)}
+\begin{frame}{Nøstede kvantorer (Nested quantifiers)}
     \begin{itemize}
         \item Ofte vil vi si noe om mange kombinasjoner av variabler samtidig.
         \item Da slår vi sammen flere $\forall$ og $\exists$.
@@ -52,7 +52,7 @@ def exists(p, xs):
     \begin{block}{Eksempler}
         $\forall x \forall y : (x^2 + y^2 \geq 0) = \forall x, y : (x^2 + y^2 \geq 0)$ \\
         \pause
-        $\forall x \exists y : (x * y = 1)$ = ''For alle x eksisterer det en y slik at $x * y = 1$'' \\
+        $\forall x \exists y : (x \cdot y = 1)$ = ''For alle x eksisterer det en y slik at $x \cdot y = 1$'' \\
         \pause
         $\exists x \forall y : (x^2 \leq y^2)$ = ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
         \pause
