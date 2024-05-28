@@ -10,7 +10,7 @@
     \begin{enumerate}
         \item Vurder hvorvidt påstanden ser ut til å stemme. Test på noen eksempler, prøv å finne et moteksempel.
         \pause
-        \item Skriv opp hva vi vet, og hva vi vil vise, i mattenotasjon
+        \item Skriv opp hva vi vet, og hva vi vil vise, i mattenotasjon.
         \pause
         \item Se etter en sammenheng, grunnen til at det ene impliserer det andre.
         \pause
@@ -46,7 +46,7 @@
     Dette er ofte de enkleste bevisene. Hvis du har formler du bare må knytte sammen, forsøk det først.\\
 
     \pause
-    Vi gjorde nettopp et direkte bevis: $p =$ "$a$ og $b$ er heltall", $q =$ "$a+b$ er et oddetall", og vi viste at $p \rightarrow q$.\\
+    Vi gjorde nettopp et direkte bevis: $p =$ "$a$ og $b$ er oddetall", $q =$ "$a+b$ er et partall", og vi viste at $p \rightarrow q$.\\
 
     \pause
     Siden $p \rightarrow q \equiv \lnot q \rightarrow \lnot p$, kan vi også bevise det 'baklengs': om konklusjon er usann, må premisset også være usannt.
@@ -75,8 +75,7 @@
 \end{frame}
 
 \begin{frame}{Motbevis}
-    For å motbevise en påstand, holder det å bare finne et moteksempel. Dette er vanligvis den letteste typen bevis.\\
-    Det er kun her det er greit å stoppe etter kun et eksempel.
+    For å motbevise en påstand, holder det å bare finne et moteksempel. Dette er vanligvis den letteste typen bevis. Det er kun her det er greit å stoppe etter kun et eksempel.
     \pause
     \begin{block}{Påstand: det er ikke mulig å plassere 8 dronninger på et sjakkbrett uten at noen av dem truer hverandre.}
     \pause
@@ -85,11 +84,10 @@
         \includegraphics[scale=0.20]{images/8 queens.png}
         \label{fig:my_label}
     \end{figure}
-    
     \end{block}
 \end{frame}
 
-\begin{frame}{Motsigelsesbevis (/proof by contradiction)}
+\begin{frame}{Motsigelsesbevis (Proof by contradiction)}
     For å bevise en proposisjon $p$, kan vi heller bevise at $\lnot p$ leder til en selvmotsigelse. 
     Vi motbeviser det motsatte.\\
 
@@ -119,17 +117,17 @@
         \pause
         $\implies \frac{e}{d} - \frac{a}{b} = c$\\
         \pause
-        $\implies \frac{b\cdot d - a \cdot d}{b\cdot d} = c$\\
+        $\implies \frac{b\cdot e - a \cdot d}{b\cdot d} = c$\\[1.5mm]
         \pause
-        Men det impliserer at $c$ er et rasjonalt tall. \text{\Lightning}\\
+        Men det impliserer jo at $c$ er et rasjonalt tall. \text{\Lightning}\\
         \pause
-        Derfor er det usant at summen er et rasjonalt tall\\
-        $\implies$ summen må være irrasjonal
+        Derfor er det usant at summen er et rasjonalt tall.\\
+        $\implies$ summen må være irrasjonal.
         \qed
     \end{block}
 \end{frame}
 
-\begin{frame}{Uttømmende bevis (/proof by exhaustion)}
+\begin{frame}{Uttømmende bevis (Proof by exhaustion)}
     Noen ganger greier vi ikke finne på et elegant bevis. Da tar vi heller for oss hvert enkelt tilfelle hver for seg, og når vi har vist at det holder for absolutt alle tilfeller har vi bevist påstanden. Merk at da må det være et endelig antall tilfeller.
     \pause
     \begin{block}{Vis at alle sommer-OL har blitt arrangert i årstall delelige på 4.}
