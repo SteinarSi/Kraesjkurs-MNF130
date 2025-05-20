@@ -3,17 +3,18 @@
     \begin{itemize}
         \item Ofte vil vi si noe om et predikat $P(x)$, men for flere potensielle $x$ samtidig.
         \pause
-        \item $\forall x : P(x)$ = $P(x_1) \land P(x_2) \land ... \land P(x_n)$ = ''For alle $x$ er det sant at $P(x)$''
+        \item $\forall x : P(x) \equiv P(x_1) \land P(x_2) \land ... \land P(x_n) \equiv$ ''For alle $x$ er det sant at $P(x)$''
         \pause
-        \item $\exists x : P(x)$ = $P(x_1) \lor P(x_2) \lor ... \lor P(x_n)$ = ''Det eksisterer en $x$ slik at det er sant at $P(x)$''
+        \item $\exists x : P(x) \equiv P(x_1) \lor P(x_2) \lor ... \lor P(x_n) \equiv$ ''Det eksisterer en $x$ slik at det er sant at $P(x)$''
         \pause
-        \item $\exists x \in S : P(x)$ = ''Det eksisterer en $x$ i settet $S$ slik at  det er sant at $P(x)$''
+        \item $\exists x \in S : P(x) \equiv$ ''Det eksisterer en $x$ i settet $S$ slik at  det er sant at $P(x)$''
     \end{itemize}
     
     \pause
+
     \begin{block}{Eksempler}
-        $\forall x : x < x + 1$ = ''For alle x er det sant at $x < x +1$''\\
-        $\exists x : x > x^2$ = ''Det eksisterer en x slik at det er sant at $x > x^2$''\\
+        $\forall x : x < x + 1 \equiv$ ''For alle x er det sant at $x < x +1$''\\
+        $\exists x : x > x^2 \equiv$ ''Det eksisterer en x slik at det er sant at $x > x^2$''\\
         $\exists x \in \mathbb{N} : x \cdot x = 1$\\
     \end{block}
 \end{frame}
@@ -55,9 +56,6 @@ def exists(p, xs):
         $\forall x \exists y : (x \cdot y = 1)$ = ''For alle x eksisterer det en y slik at $x \cdot y = 1$'' \\
         \pause
         $\exists x \forall y : (x^2 \leq y^2)$ = ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
-        \pause
-        $\lnot \exists n, a, b, c \in \mathbb{Z} : (n > 2 \land a^n + b^n = c^n)$\\
-        %$\lnot \exists n \exists a \exists b \exists c (a,b,c,n \in Z \land n > %2 \land a^n + b^n = c^n)$
     \end{block}
 \end{frame}
 
