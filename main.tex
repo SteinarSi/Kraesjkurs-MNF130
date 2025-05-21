@@ -43,11 +43,9 @@
   \let\reset@color\beamerorig@reset@color
   \HL}
 \makeatother
-\usemintedstyle{monokai} %vs
-%\definecolor{bg}{HTML}{282828}
+\usemintedstyle{native} %vs
 \definecolor{bg}{RGB}{40, 40, 40}
-\setminted{bgcolor=black,frame=lines,
-               framesep=2mm}
+\setminted{bgcolor=black,frame=lines,framesep=2mm}
 \usefonttheme{professionalfonts}
 \setbeamercovered{invisible}
 \setcounter{tocdepth}{2}
@@ -61,6 +59,16 @@
 \setbeamercolor{block title example}{bg=green!20}
 \setbeamertemplate{blocks}[rounded][shadow]
 
+\lstset{ %
+    backgroundcolor=\color{white},
+    basicstyle=\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{mygreen},
+    escapeinside={\%*}{*)},
+    keywordstyle=\color{blue},
+    stringstyle=\color{mymauve},
+}
 
 \tikzset{onslide/.code args={<#1>#2}{% from https://tex.stackexchange.com/a/6155/263192
   \only<#1>{\pgfkeysalso{#2}}
@@ -106,7 +114,7 @@
 \section{Mengdelære}
 \input{chapters/set_theory/sets.tex}
 \input{chapters/set_theory/functions.tex}
-\input{chapters/set_theory/countability.tex}
+% \input{chapters/set_theory/countability.tex} % Ikke pensum i 2025 :(
 \input{guillaume/guillaume4.tex}
 
 \section{Relasjoner}
@@ -116,6 +124,7 @@
 \input{chapters/relations/exercises.tex}
 \input{guillaume/guillaume3.tex}
 
+% TODO flytte dette til mengdelære???
 \section{Følger og summer}
 \input{chapters/sequences_and_summations/sequences_and_summations.tex}
 
@@ -143,10 +152,11 @@
 \section{Grafer}
 \input{chapters/graphs/terminology.tex}
 \input{chapters/graphs/representation.tex}
-\input{chapters/graphs/graph_searching.tex}
-\input{chapters/graphs/shortest_path.tex}
+% \input{chapters/graphs/graph_searching.tex} % TODO finn ut om BFS og DFS er pensum i 2025
+\input{chapters/graphs/shortest_path.tex} 
 \input{guillaume/guillaume9.tex}
 
+\appendix
 \input{chapters/outro.tex}
 
 \end{document}
