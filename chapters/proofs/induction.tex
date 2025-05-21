@@ -102,22 +102,29 @@
 
 \subsection{Strukturell induksjon}
 \begin{frame}{Strukturell induksjon}
-    Ofte vil vi bevise egenskaper for rekursive strukturer. Det gjøres ved to steg:
+    Ofte vil vi bevise egenskaper for rekursive strukturer. Det gjøres i to steg:
     \begin{itemize}
-        \item Basissteget: vis at strukturen i utgangspunktet har egenskapen.
-        \item Det rekursive steget: vis at om en struktur allerede har en egenskap, vil en runde med rekursjon opprettholde den egenskapen.
+        \item Basissteg: vis at strukturen i utgangspunktet har egenskapen.
+        \item Rekursivt steg: vis at om en struktur allerede har en egenskap, vil en runde med rekursjon opprettholde den egenskapen.
     \end{itemize}
     
     \pause
+    \begin{block}{}
+        Basissteg: $7 \in \mathbb{S}$.\\
+        Rekursivt steg: $a \in \mathbb{S} \rightarrow 10a \in \mathbb{S}$\\
+        $\mathbb{S} = \{7, 70, 700, 7000, 70000, ....\}$
+    \end{block}
     \begin{block}{Vis at alle tall i $\mathbb{S}$ er delelige på 7.}
         \pause
-        Basisteget: $\mathbb{S}$ inneholder bare $7$, og $7$ mod $7$ = 0. \checkmark\\
+        Basisteg: $\mathbb{S}$ inneholder kun $7$, og $7$ mod $7$ = 0. \checkmark\\
         \pause
-        Rekursive steget: Vi antar at alle tall $a \in \mathbb{S}$ er delelig på 7. Så $a = 7k$, $k \in \mathbb{N}$.\\
+        Rekursivt steg: Vi antar at alle tall $a \in \mathbb{S}$ er delelig på 7. Så $a = 7k$, $k \in \mathbb{N}$.\\
         \pause
         I neste rekursjon legger vi til $10a$ i $\mathbb{S}$.\\
         \pause
-        $10a=10 \cdot 7k$, og er også delelig på 7. En runde rekursjon opprettholder egenskapen.\checkmark\\
+        $10a=10 \cdot 7k = 7 \cdot (10ka)$, og er også delelig på 7.\\
+        \pause
+        En runde rekursjon opprettholder egenskapen. \checkmark\\
         \pause
         Derfor er alle tall i $\mathbb{S}$ delelige på 7.
     \end{block}
@@ -125,7 +132,7 @@
 
 \begin{frame}{Større eksempel på strukturell induksjon}
     Basissteg: $(0, 0) \in \mathbb{T}$.\\
-    Rekursivt steg: $(a, b) \in \mathbb{T} \rightarrow (a+1, b) \in \mathbb{T} \land (a+1, b+1) \in \mathbb{T}$.\\
+    Rekursivt steg: $(a, b) \in \mathbb{T} \rightarrow (a+1, b), (a+1, b+1) \in \mathbb{T}$.\\
     
     Oppgave: vis at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.\\
     
@@ -144,6 +151,7 @@
 public class SimpleList<T> {
     private final T[] content;
     private int size = 0;
+
     public SimpleList(int capacity) {
         content = (T[]) new Object[capacity];
     }
@@ -151,8 +159,12 @@ public class SimpleList<T> {
         content[size] = element;
         size++;
     }
-    public T get(int index) { return content[index]; }
-    public int size() { return size; }
+    public T get(int index) { 
+        return content[index]; 
+    }
+    public int size() { 
+        return size; 
+    }
 }
     \end{lstlisting}
 \end{frame}
