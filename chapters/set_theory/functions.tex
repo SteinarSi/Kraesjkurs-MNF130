@@ -23,42 +23,50 @@
 
 \begin{frame}{Funksjonskomposisjon}
     \begin{columns}
-    \begin{column}{0.38\textwidth}
-Gitt to funksjoner:
-    \begin{itemize}
-        \item $f : A \rightarrow B$
-        \item $g : B \rightarrow C$
-    \end{itemize}
-Kan vi definere en unik tredje funksjon: \\
-    $g \circ f : A \rightarrow C$\\
-    $g \circ f := g(f(x))$\\
-    \pause
-    \end{column}
-    \begin{column}{0.55\textwidth}
-        \centering
-        La $f(x) := x+1$, og $g(x) := x/2$.\\
-        Da er $g \circ f = g(f(x)) = (x+1)/2$.\\
-        \begin{figure}
-            \centering
-            \subfloat{{\includegraphics[width=2.8cm]{images/f, g.png} }}%
-            \qquad
-            \subfloat{{\includegraphics[width=2.8cm]{images/g o f.png} }}%
-            \label{fig:g o f}
-        \end{figure}
-    \end{column}
+        \begin{column}{0.38\textwidth}
+        Gitt to funksjoner:
+        \begin{itemize}
+            \item $f : A \rightarrow B$
+            \item $g : B \rightarrow C$
+        \end{itemize}
+        Kan vi definere en unik tredje funksjon: \\
+        $g \circ f : A \rightarrow C$\\
+        $g \circ f := g(f(x))$\\
+        \pause
+        \end{column}
+        \begin{column}{0.55\textwidth}
+            La \begin{itemize}
+                \item $f(x) := x+1$
+                \item $g(x) := x/2$.
+            \end{itemize}
+            \pause
+            Da er $g \circ f = g(f(x)) = (x+1)/2$.\\
+            \pause
+            \begin{figure}
+                \pause
+                \centering
+                \subfloat{{\includegraphics[width=2.8cm]{images/f, g.png} }}%
+                \qquad
+                \subfloat{{\includegraphics[width=2.8cm]{images/g o f.png} }}%
+                \label{fig:g o f}
+            \end{figure}
+        \end{column}
     \end{columns}
     \pause
     Obs! Rekkefølgen er uintuitiv. $f$ skjer før $g$. Dere kan lese det som $g$ 'anvendt på' $f$.
 \end{frame}
 
 \begin{frame}{Injektivitet}
-En funksjon $f : A \rightarrow B$ er \emph{injektiv} hvis $\forall a_1, a_2 \in A : [f(a_1) = f(a_2) \rightarrow a_1 = a_2]$.\\
+En funksjon $f : A \rightarrow B$ er \emph{injektiv} hvis $\forall a_1, a_2 : f(a_1) = f(a_2) \rightarrow a_1 = a_2$.\\
 Med andre ord: alle inputs gir et unikt output og alle piler peker på forskjellige ting.
     \begin{figure}%
+        \pause
         \centering
         \subfloat[\centering Ikke injektiv]{{\includegraphics[width=3.2cm]{images/Ikke inj.png} }}%
+        \pause
         \qquad
         \subfloat[\centering Injektiv]{{\includegraphics[width=3.2cm]{images/Inj.png} }}%
+        \pause
         \qquad
         \subfloat[\centering Ikke injektiv]{{\includegraphics[width=3.2cm]{images/Heller ikke inj.png} }}%
         \label{fig:inj}%
@@ -68,13 +76,15 @@ Med andre ord: alle inputs gir et unikt output og alle piler peker på forskjell
 \end{frame}
 
 \begin{frame}{Surjektivitet}
-En funksjon $f : A \rightarrow B$ er \emph{surjektiv} hvis $\forall b \in B$ $\exists a \in A: [f(a) = b]$.\\
+En funksjon $f : A \rightarrow B$ er \emph{surjektiv} hvis $\forall b \exists a: [f(a) = b]$.\\
 Med andre ord: hele kodomenet/outputsettet blir brukt og alt i $B$ har minst én pil som peker på seg.
     \begin{figure}%
         \centering
         \subfloat[\centering Ikke surjektiv]{{\includegraphics[width=3.2cm]{images/Ikke surjektiv.png} }}%
+        \pause
         \qquad
         \subfloat[\centering Surjektiv]{{\includegraphics[width=3.2cm]{images/Surjektiv.png} }}%
+        \pause
         \qquad
         \subfloat[\centering Ikke surjektiv]{{\includegraphics[width=3.2cm]{images/Aldri surjektiv.png} }}%
         \label{fig:sur}
@@ -86,15 +96,28 @@ Med andre ord: hele kodomenet/outputsettet blir brukt og alt i $B$ har minst én
 \begin{frame}{Bijektivitet}
 En funksjon $f : A \rightarrow B$ er \emph{Bijektiv} om den er både injektiv og surjektiv.\\
     \pause
-    Da finnes det en unik invers funksjon $f^{-1} : B \rightarrow A$ slik at $f^{-1} \circ f = id_A$ og $f \circ f^{-1} = id_B$, dvs at $\forall a \in A : [a = f^{-1}(f(a))]$ og $\forall b \in B : [b = f(f^{-1}(b))]$.
+    Da finnes det en unik invers funksjon $f^{-1} : B \rightarrow A$ slik at 
+    \begin{itemize}
+        \item $f^{-1} \circ f = id_A$
+        \pause
+        \item $f \circ f^{-1} = id_B$
+        \pause
+        \item $\forall a \in A : a = f^{-1}(f(a))$
+        \pause
+        \item $\forall b \in B : b = f(f^{-1}(b))$
+    \end{itemize}
+
     \pause
 \begin{figure}
         \centering
         \subfloat[\centering Surjektiv, ikke injektiv]{{\includegraphics[width=2.4cm]{images/Heller ikke inj.png} }}%
+        \pause
         \qquad
         \subfloat[\centering Injektiv, ikke surjektiv]{{\includegraphics[width=2.4cm]{images/Aldri surjektiv.png} }}%
+        \pause
         \qquad
         \subfloat[\centering Bijektiv]{{\includegraphics[width=2.4cm]{images/Bijektiv f.png} }}
+        \pause
         \qquad
         \subfloat[\centering Inverset $f^{-1}$]{{\includegraphics[width=2.4cm]{images/Invers f.png} }}%
         \label{fig:bij}
@@ -105,10 +128,10 @@ En funksjon $f : A \rightarrow B$ er \emph{Bijektiv} om den er både injektiv og
 \end{frame}
 
 \subsection{Tavleoppgaver}
-\begin{frame} % {Tavleoppgaver om injektivitet, surjektivitet, bijektivitet}
+\begin{frame}{Tavleoppgaver om injektivitet, surjektivitet, bijektivitet}
     \begin{itemize}
-        \item Injektiv:  $\forall a_1, a_2 : [f(a_1) = f(a_2) \rightarrow a_1 = a_2]$.\\
-        \item Surjektiv: $\forall b \in B$  $\exists a \in A : [f(a) = b]$.\\
+        \item Injektiv:  $\forall a_1, a_2 : f(a_1) = f(a_2) \rightarrow a_1 = a_2$.\\
+        \item Surjektiv: $\forall b \exists a : f(a) = b$.\\
         \item Bijektiv: begge de over \\
     \end{itemize}
     \pause

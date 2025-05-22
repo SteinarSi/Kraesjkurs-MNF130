@@ -1,45 +1,49 @@
 \subsection*{Representasjon}
-% \begin{frame}[fragile]{Måter å oppgi relasjoner på}
-%     \begin{columns}
-%         \begin{column}{0.3\textwidth}
-%             \begin{tikzcd}
-%             A \arrow[r] \arrow[d] \arrow[rd] & B \arrow[d] \arrow[ld] \\
-%             D                                & C \arrow[l]           
-%             \end{tikzcd}
-%         \end{column}
-%         \begin{column}{0.65\textwidth}
-%             Kantliste:\\
-%             $\{(A, B), (A, C), (A, D), (B, C), (B, D), (C, D)\}$\\[5mm]
-%             Settkomprehensjon:\\
-%             $\{(x, y) | x, y \in \{A,B,C,D\}, x < y\}$:\\[5mm]
-%             \begin{columns}
-%                 \begin{column}{0.27\textwidth}
-%                     Matrise:\\
-%                     \begin{math}
-%                         \begin{matrix}
-%                               & A & B & C & D\\
-%                             A & 0 & 1 & 1 & 1\\
-%                             B & 0 & 0 & 1 & 1\\
-%                             C & 0 & 0 & 0 & 1\\
-%                             D & 0 & 0 & 0 & 0
-%                         \end{matrix}
-%                     \end{math}
-%                 \end{column}
-%                 \begin{column}{0.38\textwidth}
-%                     Nabolister:\\        
-%                     $N(A) = [B, C, D]$\\
-%                     $N(B) = [C, D]$\\
-%                     $N(C) = [D]$\\
-%                     $N(D) = []$
-%                 \end{column} 
-%             \end{columns}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
-
-\begin{frame}[fragile]{Måter å oppgi grafer på}
+\begin{frame}[fragile]{Måter å oppgi relasjoner på}
     \begin{columns}
         \begin{column}{0.3\textwidth}
+            Tegning:
+
+            \begin{tikzcd}
+            A \arrow[r] \arrow[d] \arrow[rd] & B \arrow[d] \arrow[ld] \\
+            D                                & C \arrow[l]           
+            \end{tikzcd}
+        \end{column}
+        \begin{column}{0.65\textwidth}
+            Kantliste:\\
+            $\{(A, B), (A, C), (A, D), (B, C), (B, D), (C, D)\}$\\[5mm]
+            Settkomprehensjon:\\
+            $\{(x, y) | x, y \in \{A,B,C,D\}, x < y\}$:\\[5mm]
+            \begin{columns}
+                \begin{column}{0.27\textwidth}
+                    Matrise:\\
+                    \begin{math}
+                        \begin{matrix}
+                              & A & B & C & D\\
+                            A & 0 & 1 & 1 & 1\\
+                            B & 0 & 0 & 1 & 1\\
+                            C & 0 & 0 & 0 & 1\\
+                            D & 0 & 0 & 0 & 0
+                        \end{matrix}
+                    \end{math}
+                \end{column}
+                \begin{column}{0.38\textwidth}
+                    Nabolister:\\        
+                    $N(A) = [B, C, D]$\\
+                    $N(B) = [C, D]$\\
+                    $N(C) = [D]$\\
+                    $N(D) = []$
+                \end{column} 
+            \end{columns}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{\st{Måter å oppgi relasjoner på}\\ Måter å oppgi grafer på}
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            Tegning:
+
             \begin{tikzcd}
             A \arrow[r] \arrow[d] \arrow[rd] & B \arrow[d] \arrow[ld] \\
             D                                & C \arrow[l]           

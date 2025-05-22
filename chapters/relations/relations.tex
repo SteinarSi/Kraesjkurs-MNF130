@@ -1,18 +1,23 @@
 \begin{frame}[fragile]{Relasjoner}
-    En relasjon $R$ fra $A$ til $B$ er et subset $ R \subseteq A \times B$. De minner om funksjoner, men er et mer generelt konsept. De er lettere å visualisere ved å tegne dem:
+    En relasjon $R$ fra $A$ til $B$ er et subset $ R \subseteq A \times B$. De minner om funksjoner, men er et mer generelt konsept.\\
+    
+    \pause
+    De er lettere å visualisere ved å tegne dem:
     \begin{figure}
         \centering
         \subfloat{{\includegraphics[width=2.8cm]{images/int again.png} }}
+        \pause
         \qquad
         \subfloat{{\includegraphics[width=2.8cm]{images/???.png} }}
-        \qquad
-        \subfloat{{\includegraphics[width=2.8cm]{images/aa.png} }}
+        % \pause
+        % \qquad
+        % \subfloat{{\includegraphics[width=2.8cm]{images/aa.png} }}
+        \pause
         \qquad
         \subfloat{{\includegraphics[width=2.8cm]{images/aaa.png} }}
         \label{fig:relasjoner}
     \end{figure} 
 
-    \pause
     Veldig ofte er $A$ og $B$ det samme settet, dvs at $R \subseteq A \times A$.\\ 
     Da kaller vi R en relasjon \emph{på} $A$.
 \end{frame}
@@ -20,6 +25,8 @@
 \begin{frame}[fragile]{Måter å oppgi relasjoner på}
     \begin{columns}
         \begin{column}{0.3\textwidth}
+            Tegning:
+
             \begin{tikzcd}
             A \arrow[r] \arrow[d] \arrow[rd] & B \arrow[d] \arrow[ld] \\
             D                                & C \arrow[l]           

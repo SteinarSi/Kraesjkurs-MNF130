@@ -75,24 +75,36 @@ F & T \\ \hline
     \end{tabular}
 \end{frame}
 
-\begin{frame}{Ekvivalenser og tautologier}
+\begin{frame}{Egenskaper}
     \begin{itemize}
         \item Når to logiske uttrykk alltid har samme verdi, sier vi at de er \emph{logisk ekvivalente}.
-        \item Om et uttrykk alltid er sant, uavhengig av innholdet, kaller vi det en tautologi.
+        \pause
+        \item Om et uttrykk alltid er sant, uavhengig av innholdet, kaller vi det en \emph{tautologi}.
+        \pause
+        \item Et uttrykk er \emph{tilfredsstilbart} om det finnes en kombinasjon av variabler slik at uttrykket blir T.
     \end{itemize}
-    \begin{tabular}{c|c|c|c}
-         $p$ & $\lnot p$ & $\lnot \lnot p$ & $p \lor \lnot p$\\ \hline
-         T & F & T & T\\
-         F & T & F & T
+    \pause
+    \begin{tabular}{c|c|c|c|c}
+         $p$ & $\lnot p$ & $\lnot \lnot p$ & $p \lor \lnot p$ & $p \land \lnot p$\\ \hline
+         T & F & T & T & F\\
+         F & T & F & T & F
     \end{tabular}
     \pause
     \begin{itemize}
-        \item Konklusjon 1: $p \equiv \lnot \lnot p$
+        \item Konklusjon 1: $p \equiv \lnot \lnot p$, og er logisk ekvivalente
         \pause
         \item Konklusjon 2: $p \lor \lnot p \equiv T$, og er en tautologi
         \pause
-        \item For å se om to uttrykk er ekvivalente, tegn sannhetstabellen og se om kollonene deres er det samme.
-        \item For å se om et uttrykk er en tautologi, tegn sannhetstabellen og se om kolonnen alltid er T.
+        \item Konklusjon 3: $p \land \lnot p \equiv F$, og er ikke tilfredsstilbart.
+    \end{itemize}
+    \pause
+    De fleste oppgavene om dette kan løses bare ved å tegne opp sannhetstabellen:
+    \begin{itemize}
+        \item To uttrykk har like kolonner $\rightarrow$ uttrykkene er logisk ekvivalente
+        \pause
+        \item Et uttrykk har kun T-er $\rightarrow$ uttrykket er en tautologi
+        \pause
+        \item Et uttrykk har minst én T $\rightarrow$ uttrykket er tilfredsstilbart
     \end{itemize}
 \end{frame}
 

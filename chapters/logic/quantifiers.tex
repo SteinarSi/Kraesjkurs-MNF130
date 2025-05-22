@@ -22,14 +22,14 @@
 \begin{frame}[fragile]{Kvantorer i praksis}
     Kvantorer ser skumle ut, men det er bare for-løkker.
     \begin{python}
-def forall(p, xs):
-    for x in xs:
+def forall(p, S):
+    for x in S:
         if not p(x):
             return False
     return True
     
-def exists(p, xs):
-    for x in xs:
+def exists(p, S):
+    for x in S:
         if p(x):
             return True
     return False
@@ -37,8 +37,8 @@ def exists(p, xs):
     
     \pause
     \begin{itemize}
-        \item forall(p, xs) = $\forall x \in xs : p(x)$        
-        \item exists(p, xs) = $\exists x \in xs : p(x)$
+        \item forall(p, S) = $\forall x \in S : p(x)$        
+        \item exists(p, S) = $\exists x \in S : p(x)$
     \end{itemize}
 \end{frame}
 
@@ -51,11 +51,11 @@ def exists(p, xs):
     
     \pause
     \begin{block}{Eksempler}
-        $\forall x \forall y : (x^2 + y^2 \geq 0) = \forall x, y : (x^2 + y^2 \geq 0)$ \\
+        $\forall x \forall y : (x^2 + y^2 \geq 0) \equiv \forall x, y : (x^2 + y^2 \geq 0)$ \\
         \pause
-        $\forall x \exists y : (x \cdot y = 1)$ = ''For alle x eksisterer det en y slik at $x \cdot y = 1$'' \\
+        $\forall x \exists y : (x \cdot y = 1) \equiv$ ''For alle x eksisterer det en y slik at $x \cdot y = 1$'' \\
         \pause
-        $\exists x \forall y : (x^2 \leq y^2)$ = ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
+        $\exists x \forall y : (x^2 \leq y^2) \equiv$ ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
     \end{block}
 \end{frame}
 

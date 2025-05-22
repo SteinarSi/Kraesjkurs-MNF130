@@ -2,15 +2,15 @@
 \begin{frame}[fragile]{Egenskaper på relasjoner}
 Gitt en relasjon $R \subseteq A \times A$ på $A$ har vi 5 viktige begreper for å beskrive den:
     \begin{itemize}
-        \item Refleksiv: $\forall a : ((a, a) \in R)$
+        \item Refleksiv: $\forall a : (a, a) \in R$
         \pause
-        \item Symmetrisk: $\forall a, b : [(a, b) \in R \leftrightarrow (b, a) \in R]$
+        \item Symmetrisk: $\forall a, b : (a, b) \in R \leftrightarrow (b, a) \in R$
         \pause
-        \item Antisymmetrisk: $\forall a, b : [(a, b) \in R \land (b, a) \in R \rightarrow a = b]$
+        \item Antisymmetrisk: $\forall a, b : (a, b), (b, a) \in R \rightarrow a = b$
         \pause
-        \item Transitiv: $\forall a, b, c : [(a, b) \in R \land (b, c) \in R \rightarrow (a, c) \in R]$\\
+        \item Transitiv: $\forall a, b, c : (a, b), (b, c) \in R \rightarrow (a, c) \in R$\\
         \pause
-        \item Om en relasjon er refleksiv, symmetrisk og transitiv, kaller vi det en ekvivalensrelasjon.
+        \item Om en relasjon er refleksiv, symmetrisk og transitiv, kaller vi det en \emph{ekvivalensrelasjon}.
     \end{itemize}   
 \end{frame}
 
@@ -117,7 +117,7 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
 \end{frame}
 
 \begin{frame}[fragile]{Antisymmetriske relasjoner}
-    En relasjon $R$ er \emph{antisymmetrisk} hvis $\forall a, b : [(a, b) \in R \land (b, a) \in R \rightarrow a = b]$.\\
+    En relasjon $R$ er \emph{antisymmetrisk} hvis $\forall a, b : (a, b), (b, a) \in R \rightarrow a = b$.\\
     \begin{columns}
         \begin{column}{0.3\textwidth}
             Ikke antisymmetrisk:\\
