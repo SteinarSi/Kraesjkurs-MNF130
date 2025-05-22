@@ -1,26 +1,29 @@
 \subsection{Div og mod}
 
 \begin{frame}{Divisjon og Modulær aritmetikk}
-       \begin{block}{Delelighet $a|b$ ($a$ deler $b$)}
-              $a$ kan dele $b$ uten rest\\
-              $a|b$ er det samme som $\frac{b}{a}=c$ eller $b=a\cdot c$ med $c \in \mathbb{Z}$\\
-              Eksempel: $3|12$ eller $\frac{12}{3} = 4$ eller $12=3\cdot 4$
-       \end{block}
-       \pause
-       \begin{block}{Modulo (Klokkearitmetikk)}
-              $a \bmod b$ gir ut resten av heltall divisjon av $\frac{a}{b}$ ($a\%b$ i programmeringsspråk)
-              $a \bmod b = r$ kalles \textit{remainder}
-              Eksempel: $17 \bmod 5 = 2$ fordi $17 = 3 \cdot 5 + 2$ 
-       \end{block}
+    \begin{block}{Delelighet $a|b$ ($a$ deler $b$)}
+        $a$ kan dele $b$ uten rest\\
+        $a|b$ er det samme som $\frac{b}{a}=c$ eller $b=a\cdot c$ med $c \in \mathbb{Z}$\\
+        Eksempel: $3|12$ eller $\frac{12}{3} = 4$ eller $12=3\cdot 4$
+    \end{block}
+    \pause
+    \begin{block}{Modulo (Klokkearitmetikk)}
+        $a \bmod b$ gir ut resten av heltall divisjon av $\frac{a}{b}$ ($a\%b$ i programmeringsspråk)
+        $a \bmod b = r$ kalles \textit{remainder}
+        Eksempel: $17 \bmod 5 = 2$ fordi $17 = 3 \cdot 5 + 2$ 
+    \end{block}
 \end{frame}
 
-\begin{frame}[fragile]{Algoritme for divisjon /modulo}
-       \begin{itemize}[<+->]
-              \item $d=q\cdot a + r$ med
-              \item $q=\big\lfloor{\frac{d}{a}}\big\rfloor$ og $r=d \bmod a$
-              \item Eksempel: $q=\big\lfloor{\frac{17}{5}}\big\rfloor = \lfloor{3.4}\rfloor=3$
-              \item $17=3\cdot 5 + r$ $\iff$ $17=15+r$ $\iff$ $r=2$
-       \end{itemize}
+\begin{frame}[fragile]{Algoritme for divisjon / modulo}
+
+    La $r, d \in \mathbb{N}_{0}$, og $0 \leq r < d$.
+    \begin{itemize}[<+->]
+        \item $d=q\cdot a + r$ med
+        \item $q=\big\lfloor{\frac{d}{a}}\big\rfloor$ og $r=d \bmod a$
+        \item Eksempel: $q=\big\lfloor{\frac{17}{5}}\big\rfloor = \lfloor{3.4}\rfloor=3$
+        \item $17=3\cdot 5 + r$ $\iff$ $17=15+r$ $\iff$ $r=2$
+    \end{itemize}
+
 \end{frame}
 
 \begin{frame}{Modulo regneregler}
