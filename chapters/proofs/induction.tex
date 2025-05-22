@@ -11,6 +11,7 @@
             \pause
             Siden $P(0)$ stemmer, må $P(1)$ stemme, og\\
             Siden $P(1)$ stemmer, må $P(2)$ stemme, og\\
+            Siden $P(2)$ stemmer, må $P(3)$ stemme, og\\
             ...\\
             Siden $P(k)$ stemmer, må $P(k+1)$ stemme.\\[1.5mm]
         
@@ -18,7 +19,7 @@
             Dermed har vi bevist at $\forall x : x \geq 0 \rightarrow P(x)$.
         \end{column}
         \pause
-        \begin{column}{0.2\textwidth}
+        \begin{column}{0.25\textwidth}
             \begin{figure}
                 \includegraphics[scale=0.1]{images/domino.PNG}
             \end{figure}
@@ -26,28 +27,31 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Eksempel på matematisk induksjon}
-    Vis at $\sum_{i=0}^{n} i = 0 + 1 + 2 + ... + n = \frac{n(n+1)}{2}$.\\[4mm]
-\pause    
-    Vi lar $P(k) := \sum_{i=0}^{k} i = \frac{k(k+1)}{2}$\\[2mm]
-\pause
+\begin{frame}{Oppgave: vis at $\sum_{i=0}^{n} i = 0 + 1 + 2 + ... + n = \frac{n(n+1)}{2}$.}
+    \pause    
+    Vi lar $P(k) := \sum_{i=0}^{k} i = \frac{k(k+1)}{2}$\\
+
+    \pause
     Vi begynner med base case, at påstanden holder for $P(0)$:\\
-    $P(0): \sum_{i=0}^{0} i = \frac{0(0+1)}{2} = 0$ \checkmark\\
-\end{frame}
+    $P(0): \sum_{i=0}^{0} i = 0$ \pause $ = \frac{0(0+1)}{2}$ \checkmark\\
+    
+    \pause
+    Induksjonshypotesen vår er at påstanden holder for en vilkårlig $k$: \\
+    $P(k): \sum_{i=0}^{k} i = \frac{k(k+1)}{2}$\\
+    \pause
+    Vi må vise at det impliserer at påstanden også holder for $P(k+1)$:\\
+    $P(k+1): \sum_{i=0}^{k+1} i = \frac{(k+1)((k+1)+1)}{2}$ \pause $ = \frac{(k+1)(k+2)}{2}$\\
 
-\begin{frame}{Eksempel på matematisk induksjon (fortsettelse)}
-    Vis at om $P(k)$ stemmer, må $P(k+1)$ stemme.\\[2mm]
-    Induksjonshypotesen vår er at påstanden holder for $k$: \\
-    $P(k): \sum_{i=0}^{k} i = \frac{k(k+1)}{2}$\\[2mm]
-
-    Nå vil vi vise at det medfører at påstanden også må holde for $k+1$:\\
-    $P(k+1): \sum_{i=0}^{k+1} i = \frac{(k+1)((k+1)+1)}{2} = \frac{(k+1)(k+2)}{2}$\\
-
-    $\sum_{i=0}^{k+1} i = 0 + 1 + 2 + ... + k + (k+1) = (\sum_{i=0}^{k} i )+ (k+1)$\\
-\pause
+    \pause
+    $\sum_{i=0}^{k+1} i = 0 + 1 + 2 + ... + k + (k+1)$ \pause $= (\sum_{i=0}^{k} i )+ (k+1)$\\
+    \pause
     $=\frac{k(k+1)}{2} + k + 1$\\
+    \pause
     $= \frac{k(k+1)}{2}+\frac{2(k+1)}{2} = \frac{k(k+1)+2(k+1)}{2}$\\
-    $= \frac{(k+1)(k+2)}{2}$ \checkmark
+    \pause
+    $= \frac{(k+1)(k+2)}{2}$ \pause \checkmark \\[2mm]
+    \pause
+    Siden påstanden holder for $P(0)$, og siden $P(k) \rightarrow P(k+1)$, vil påstanden holde for alle $n \geq 0$. $\qed$
 \end{frame}
 
 \begin{frame}{Sterk induksjon}
@@ -87,10 +91,10 @@
     $ = 5$
 \end{frame}
 
-\begin{frame}{Rekursive definisjoner}
+\begin{frame}{Rekursive strukturer}
     Som med funksjoner kan vi også definere andre strukturer rekursivt.\\
     
-    De defineres med et basissteg, dvs utgangspunktet, og et rekursivt steg for å utvide det.\\
+    De defineres med et basissteg, altså et utgangspunkt, og et rekursivt steg for å utvide det.\\
     
     \pause
     \begin{block}{Eksempel}
@@ -105,7 +109,7 @@
     Ofte vil vi bevise egenskaper for rekursive strukturer. Det gjøres i to steg:
     \begin{itemize}
         \item Basissteg: vis at strukturen i utgangspunktet har egenskapen.
-        \item Rekursivt steg: vis at om en struktur allerede har en egenskap, vil en runde med rekursjon opprettholde den egenskapen.
+        \item Rekursivt steg: vis at om en rekursiv struktur allerede har en egenskap, vil en runde med rekursjon opprettholde den egenskapen.
     \end{itemize}
     
     \pause
@@ -126,7 +130,7 @@
         \pause
         En runde rekursjon opprettholder egenskapen. \checkmark\\
         \pause
-        Derfor er alle tall i $\mathbb{S}$ delelige på 7.
+        Derfor er alle tall i $\mathbb{S}$ delelige på 7. \qed
     \end{block}
 \end{frame}
 
@@ -134,26 +138,34 @@
     Basissteg: $(0, 0) \in \mathbb{T}$.\\
     Rekursivt steg: $(a, b) \in \mathbb{T} \rightarrow (a+1, b), (a+1, b+1) \in \mathbb{T}$.\\
     
-    Oppgave: vis at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.\\
+    Oppgave: vis at $\forall a, b \in \mathbb{T} : a \geq b$.\\
     
     \pause
     Basissteg: $(0, 0) \in \mathbb{T}$, og $0 \geq 0$. \checkmark\\
-    Rerkursivt steg: vi antar at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$. Hvert rekursive kall legger til to nye par, $(a+1, b)$ og $(a+1, b+1)$. Vi ser på dem hver for seg:
+    \pause
+
+    Rerkursivt steg: vi antar at $\forall a, b \in \mathbb{T} : a \geq b$.\\
+    \pause
+    Hvert rekursive kall legger til to nye par, $(a+1, b)$ og $(a+1, b+1)$.\\
+    \pause
+    Vi ser på dem hver for seg:
     \begin{itemize}
         \item Om $a \geq b$ er $a+1 \geq b$.
         \item Om $a \geq b$ er $a+1 \geq b+1$. \checkmark
     \end{itemize}
-    Dermed kan vi konkludere med at $\forall a, b : [(a, b) \in \mathbb{T} \rightarrow a \geq b]$.
+    \pause
+    Dermed kan vi konkludere med at $\forall a, b \in \mathbb{T} : a \geq b$. \qed
 \end{frame}
 
 \begin{frame}[fragile]{Strukturell induksjon i praksis}
     \begin{lstlisting}[language=Java]
 public class SimpleList<T> {
     private final T[] content;
-    private int size = 0;
+    private int size;
 
     public SimpleList(int capacity) {
         content = (T[]) new Object[capacity];
+        size = 0;
     }
     public void add(T element) {
         content[size] = element;
@@ -167,4 +179,7 @@ public class SimpleList<T> {
     }
 }
     \end{lstlisting}
+
+    \pause
+    Spørsmål: er \pyth{.size()} korrekt?
 \end{frame}

@@ -24,10 +24,11 @@
         \item Vi tester med et par eksempler: 
         \begin{itemize}
             \item $3+7$ \pause $= 10$ \checkmark
+            \pause
             \item $15+1$ \pause $ = 16$ \checkmark
         \end{itemize}
         \pause
-        \item Vi vet at om $a$ og $b$ er oddetall kan vi skrive dem som $2k + 1$ og $2c + 1$, for noen heltall $k, c$. 
+        \item Vi vet at om $a$ og $b$ er oddetall kan vi skrive dem som $2k + 1$ og $2c + 1$, for noen heltall $k, c$. \\
         \pause
         Vi vil vise at $a + b = 2h$, for et heltall $h$.
         \pause
@@ -36,12 +37,15 @@
         $a + b = (2k + 1) + (2c + 1) = 2(k + c + 1)$
 
         Og da var vi plutselig allerede ferdige.
+        \pause
+        \item Vi gjør resten av beviset:
     \end{enumerate}
 
-    \pause
     \begin{block}{Bevis: summen av to oddetall er et partall}
-        La $a = 2k + 1, b = 2c + 1$ være oddetall, for vilkårlige heltall $k$ og $c$.\\\pause
-        Da er $a + b = (2k + 1) + (2c + 1) = 2(k + c + 1)$, som er et partall. $\qed$
+        La $a = 2k + 1, b = 2c + 1$ være oddetall, for vilkårlige heltall $k$ og $c$.\\
+        \pause
+        Da er $a + b = (2k + 1) + (2c + 1) = 2(k + c + 1)$, som er et partall.\\
+        \pause Dermed er summen av to oddetall alltid et partall. \qed
     \end{block}
 \end{frame}
 
@@ -56,38 +60,49 @@
     Siden $p \rightarrow q \equiv \lnot q \rightarrow \lnot p$, kan vi også bevise det 'baklengs': om konklusjon er usann, må premisset også være usannt.
 \end{frame}
 
-\begin{frame}{Oppgave: vis at for alle $n$, om $n^2$ er et partall, er $n$ et partall.}
+\begin{frame}{Eksempel på et kontrapositivt bevis}
+    Istedet for å vise at $p \rightarrow q$, beviser vi $\lnot q \rightarrow \lnot p$.\\[2mm]
+    Oppgave: vis at for alle $n$, om $n^2$ er et partall, er $n$ et partall.
     \begin{enumerate}
         \pause
         \item Vi tester: 64 og 8 er partall, 36 og 6 er partall. Ser riktig ut.
         \pause
         \item Vi vet at $n^2 = 2k$, og vil vise at da er $n = 2c$.
         \pause
-        \item Om $n^2$ er et partall, må det antageligvis være et partall ganget med seg selv, ellers får vi et oddetall. Det høres meningsfullt ut, men er kanskje vanskelig å vise rett frem.
+        \item Om $n^2$ er et partall, må det antageligvis være et partall ganget med seg selv, ellers får vi et oddetall. Det høres meningsfullt ut, men er kanskje vanskelig å vise rett frem. Vi kan prøve å bevise det baklengs, med et kontrapositivt bevis!
+        \pause
+        \item Vi gjør resten av beviset:
     \end{enumerate}
 
-    \pause
-    \begin{block}{For alle $n$, om $n^2$ er et partall, er $n$ et partall}
-        La $n = 2c + 1$ være et oddetall, for et heltall $c$.
+    \begin{block}{}
+        La $n = 2c + 1$ være et vilkårlig oddetall, for et heltall $c$.
 
         \pause
         Da er $n^2 = (2c + 1)^2 = 4c^2 + 4c + 1 = 2(2c^2 + 2c) + 1$, som er et oddetall.
 
         \pause
-        Om $n$ er et oddetall er $n^2$ dermed også det. Om $n^2$ er et partall, er $n$ dermed nødt til å være et partall. $\qed$
+        Om $n$ er et oddetall er $n^2$ dermed også det. 
+        
+        \pause
+        Om $n^2$ er et partall, er $n$ dermed nødt til å være et partall. \qed
     \end{block}
 \end{frame}
 
 \begin{frame}{Motbevis}
-    For å motbevise en påstand, holder det å bare finne et moteksempel. Dette er vanligvis den letteste typen bevis. Det er kun her det er greit å stoppe etter kun et eksempel.
+    For å motbevise en usann påstand, holder det å bare finne et moteksempel. Dette er vanligvis den letteste typen bevis. Det er kun her det er greit å stoppe etter kun et eksempel.
     \pause
-    \begin{block}{Påstand: det er ikke mulig å plassere 8 dronninger på et sjakkbrett uten at noen av dem truer hverandre.}
-    \pause
-    \begin{figure}
+    \begin{block}{Påstand: det er \emph{ikke} mulig å plassere 8 dronninger på et sjakkbrett uten at noen av dem truer hverandre.}
+        \pause
         \centering
-        \includegraphics[scale=0.20]{images/8 queens.png}
-        \label{fig:my_label}
-    \end{figure}
+        Jo-ho! Det er faktisk mulig!
+        \begin{figure}
+            \includegraphics[scale=0.20]{images/8 queens.png}
+            \label{fig:my_label}
+        \end{figure}
+        \pause
+        \centering
+        *mic drop*\\
+        \qed
     \end{block}
 \end{frame}
 
@@ -99,16 +114,16 @@
     Et motsigelsesbevis ser vanligvis slik ut:
     \begin{block}{Oppgave: vis at $p$ er sant}
         \pause
-        Ok da, la oss anta at $p$ på en eller annen måte \emph{ikke} er sant.
+        Ok da, for din skyld, la oss \emph{anta} at $p$ på en eller annen måte \emph{ikke} er sant.
 
         \pause
-        Hadde ikke det vært ganske dumt?
+        Hadde ikke det vært ganske teit?
 
         \pause
-        Ja nettopp, jeg regner med du føler deg dum nå.
+        Ja nettopp, og jeg regner med du føler deg rimelig dum nå.
 
         \pause
-        Derfor er $p$ sant.
+        Derfor er $p$ sant. \qed
     \end{block}
 \end{frame}
 
@@ -123,7 +138,7 @@
         \pause
         $\implies \frac{b\cdot e - a \cdot d}{b\cdot d} = c$\\[1.5mm]
         \pause
-        Men det impliserer jo at $c$ er et rasjonalt tall. \text{\Lightning}\\
+        Men det impliserer jo at $c$ er et rasjonalt tall. \pause \text{\Lightning}\\
         \pause
         Derfor er det usant at summen er et rasjonalt tall.\\
         $\implies$ summen må være irrasjonal.
@@ -132,7 +147,9 @@
 \end{frame}
 
 \begin{frame}{Uttømmende bevis (Proof by exhaustion)}
-    Noen ganger greier vi ikke finne på et elegant bevis. Da tar vi heller for oss hvert enkelt tilfelle hver for seg, og når vi har vist at det holder for absolutt alle tilfeller har vi bevist påstanden. Merk at da må det være et endelig antall tilfeller.
+    Noen ganger greier vi ikke finne på et elegant bevis. Da tar vi heller for oss hvert enkelt tilfelle hver for seg, og når vi har vist at det holder for absolutt alle tilfeller har vi bevist påstanden. 
+    
+    Det er bare mulig om det kun er et \emph{endelig} antall tilfeller vi må håndtere.
     \pause
     \begin{block}{Vis at alle sommer-OL har blitt arrangert i årstall delelige på 4.}
         \pause
@@ -141,7 +158,7 @@
         1900 mod 4 = 0 \checkmark \\
         \pause
         {[... de neste 30 linjene er trivielle og etterlatt som en oppgave for leseren ...]}\\
-        2024 mod 4 = 0 \checkmark
+        2024 mod 4 = 0 \checkmark \qed
     \end{block}
     \pause
     Dette er altså ikke et komplett bevis. Vi må faktisk vise alle tilfeller før vi er ferdig.

@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
-minutes = 2
-seconds = 35
+minutes = 0
+seconds = 0
 
 years = [2022, 2023, 2024, 2025]
 results = [84, 64, 291, 60 * minutes + seconds]
