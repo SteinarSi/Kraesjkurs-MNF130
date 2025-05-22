@@ -1,18 +1,10 @@
 # Kræsjkurs MNF130
-
-Her er presentasjonen og kildekoden til et kræsjkurs i MNF130, som har blitt brukt i årene 2022-2024. 
+Her er presentasjonen og kildekoden til et kræsjkurs i MNF130, som har blitt brukt i årene 2022-2025. 
 
 ### Presentasjonen
 Den korte versjonen er `Kræsjkurs.pdf`.
 
 Den lange versjonen, med et nytt lysbilde for hver ting som skal dukke opp underveis, er `Kræææsjkurs.pdf`.
-
-Merk at noen av temaene vi har lysbilder på ikke er pensum i 2024. Likevel har vi beholdt lysbildene for de temaene, siden det er høyst sannsynlig at det er en annen emneansvarlig neste år og at noen av temaene kommer tilbake. Det gjelder:
-* Strukturell induksjon
-* Relasjoner
-* Tellbarhet
-* Kryptografi
-* Trær
 
 ### Opptaket
 https://www.youtube.com/watch?v=Yg5BX6h-4y4 
@@ -23,7 +15,7 @@ Om du skal holde ditt eget kræsjkurs, og vil ta utgangspunkt i dette, må du gj
 ***
 
 ### License
-Copyright 2024 Steinar Simonnes
+Copyright 2025 Steinar Simonnes
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
