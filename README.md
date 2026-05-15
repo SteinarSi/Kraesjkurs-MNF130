@@ -10,7 +10,7 @@ Den lange versjonen, med et nytt lysbilde for hver ting som skal dukke opp under
 https://www.youtube.com/watch?v=Yg5BX6h-4y4 
 
 ### Kildekoden
-Om du skal holde ditt eget kræsjkurs, og vil ta utgangspunkt i dette, må du gjerne gjøre det. Bare husk å ha med lisensen nedenfor. Du kan generere presentasjonen ved å kompilere `main.tex`, for eksempel med en kommando som `pdflatex -shell-escape main.tex`. Det tar noen minutter, så når du jobber med lysbildene anbefales det å kommentere ut kapitlene du ikke jobber med. For å bytte mellom å generere et nytt lysbilde for hver `\pause`, og å ikke gjøre det, kan du fjerne eller legge til nøkkelordet `handout` øverst i `main.tex`.
+Om du skal holde ditt eget kræsjkurs, og vil ta utgangspunkt i dette, må du gjerne gjøre det. Bare husk å ha med lisensen nedenfor. Du kan generere presentasjonen ved å kompilere `main.tex`, for eksempel med en kommando som `lualatex main.tex`. Det tar noen minutter, så når du jobber med lysbildene anbefales det å kommentere ut kapitlene du ikke jobber med. For å bytte mellom å generere et nytt lysbilde for hver `\pause`, og å ikke gjøre det, kan du fjerne eller legge til nøkkelordet `handout` øverst i `main.tex`.
 
 ***
 
