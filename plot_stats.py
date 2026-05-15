@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 
-minutes = 0
-seconds = 0
+minutes = 3
+seconds = 5
 
 years = [2022, 2023, 2024, 2025]
-results = [84, 64, 291, 60 * minutes + seconds]
+results = [84, 64, 291, 185]
 
 plt.bar(years, results)
 plt.xticks(years)
