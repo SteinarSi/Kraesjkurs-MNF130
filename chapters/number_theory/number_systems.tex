@@ -15,8 +15,8 @@ Navn & Sifre & 5 & 11 & 34 \\ \hline
 Desimal (b=10) & 0-9 & 5& 11 & 34 \\
 Binær (b=2) & 0-1 & 101 & 1011 & 100010 \\
 Octal (b=8) & 0-7 & 5&  13 & 42\\
-Hexadesimal (b=16) & 0-9,a-f& 5& B& 22\\
-base=13 & 0-9,a-c & 5& B& 28
+Hexadesimal (b=16) & 0-9,A-F& 5& B& 22\\
+base=13 & 0-9,A-C & 5& B& 28
 \end{tabular}
 \caption{Eksempler på forskjellige tallsystemer}
 \end{table}
@@ -38,12 +38,12 @@ base=13 & 0-9,a-c & 5& B& 28
 \begin{table}
 \begin{tabular}{r|c|r}
 n & nextDigit & output \\ \hline
-22 & & 0 \\
-11 & 0 & 0\\
-5 & 1 & 10\\
-2 & 1 & 110\\
-1 & 0 & 0110\\
-0 & 1 & 10110
+22 & 0 & 0 \\
+11 & 1 & 10\\
+5 & 1 & 110\\
+2 & 0 & 0110\\
+1 & 1 & 10110\\
+0 & stop & 10110
 \end{tabular}
 \caption{Eksempel for dec til base 2}
 \end{table}

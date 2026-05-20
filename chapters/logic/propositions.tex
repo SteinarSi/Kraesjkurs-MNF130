@@ -67,8 +67,8 @@
         \item En proposisjon kan implisere en annen proposisjon.
     \end{itemize}
     \begin{block}{Eksempel}
-        La $p : = $ ``Det regner ute'', og $q : \iff$ ``Bakken er våt''\\
-        $p \rightarrow q = $ ``Hvis det regner ute, blir bakken våt''\\
+        La $p : = $ ``Det regner ute'', og $q : =$ ``Bakken er våt''\\
+        $p \rightarrow q = $ ``Hvis det regner ute, så er bakken våt''\\
         $p \leftrightarrow q = $ ``Det regner ute hvis og bare hvis bakken er våt''
     \end{block}
     \pause
@@ -98,7 +98,7 @@
     \end{center}
     \begin{block}{Eksempel}
         La $p : = $''Det regner ute'', og $q : = $ ''Bakken er våt''\\
-        $p \rightarrow q = $ ''Hvis det regner ute, blir bakken våt''\\
+        $p \rightarrow q = $ ''Hvis det regner ute, så er bakken våt''\\
         $q \rightarrow p = $ ''Hvis bakken er våt, så regner det ute''\\
         $\lnot q \rightarrow \lnot p = $ ''Hvis bakken ikke er våt, så regner det ikke ute''\\
         $\lnot p \rightarrow \lnot q = $ ''Hvis det ikke regner ute, blir bakken ikke våt''\\
@@ -111,7 +111,8 @@
         \pause
         \item Om et uttrykk alltid er sant, uavhengig av innholdet, kaller vi det en \emph{tautologi}.
         \pause
-        \item Et uttrykk er \emph{tilfredsstilbart} om det finnes en kombinasjon av variabler slik at uttrykket blir T.
+        \item Om et uttrykk alltid er usant, uavhengig av innholdet, kaller vi det en \emph{kontradiksjon}.
+        %\item Et uttrykk er \emph{tilfredsstilbart} om det finnes en kombinasjon av variabler slik at uttrykket blir T.
     \end{itemize}
     \pause
     \begin{center}
@@ -127,7 +128,7 @@
         \pause
         \item Konklusjon 2: $p \lor \lnot p \equiv T$, og er en tautologi
         \pause
-        \item Konklusjon 3: $p \land \lnot p \equiv F$, og er ikke tilfredsstilbart.
+        \item Konklusjon 3: $p \land \lnot p \equiv F$, og er en kontradiksjon.
     \end{itemize}
     \pause
     De fleste oppgavene om dette kan løses bare ved å tegne opp sannhetstabellen:
@@ -136,7 +137,7 @@
         \pause
         \item Et uttrykk har kun T-er $\leftrightarrow$ uttrykket er en tautologi
         \pause
-        \item Et uttrykk har minst én T $\leftrightarrow$ uttrykket er tilfredsstilbart
+        \item Et uttrykk har kun F-er $\leftrightarrow$ uttrykket er en kontradiksjon
     \end{itemize}
 \end{frame}
 

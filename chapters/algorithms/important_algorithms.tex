@@ -1,0 +1,88 @@
+\subsection{Viktige algoritmer}
+\begin{frame}[fragile]{Algoritmer}
+    Hva er en algoritme?\\ \pause
+    \begin{block}[fragile][Definisjon fra boken]
+    En algoritme er en endelig sekvens med instruksjoner for å gjøre en utregning eller løse en oppgave.
+    \end{frame}
+
+    Mye går under denne definisjonen, f.eks oppskrifter til matlaging, treningsplaner, reiseplaner osv. \\
+    I dette kurset ser vi på noen algoritmer for sortering og søk.
+\end{frame}
+
+\begin{frame}[fragile]{Lineær søk}
+    Input: En liste, et element \\
+    Output: Posisjonen til elementet i listen \\
+
+    \begin{python}
+def linear_search(list, e):
+    for i in range(len(list)):
+        if list[i] == e:
+            return i
+    return -1
+    \end{python}
+\end{frame}
+
+\begin{frame}[fragile]{Hva om listen er sortert?}
+    Anta at vi har listen
+    $$A = [1.1, 4.24, 4.25, 6.7, 6.8, 6.9, 8]$$
+    og vi ønsker å finne hvor 4.24 befinner seg.\\
+
+    La oss sammenligne 4.25 med f.eks 6.8.\\
+    Siden 6.8>4.25 vet vi at 4.25 ikke kan befinne seg etter 6.8 i listen. Dermed slipper vi å søke videre oppover. \\
+    Binær søk utnytter dette til å ekskludere halve søkerommet hver iterasjon
+\end{frame}
+
+\begin{frame}[fragile]{Binær søk}
+    Input: En \textbf{sortert} liste, et element \\
+    Output: Posisjonen til elementet i listen \\
+
+    \begin{python}
+def binary_search(list, e):
+    left = 0
+    right = len(list) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if list[mid] == e:
+            return mid
+        elif list[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+    \end{python}
+\end{frame}
+
+\begin{frame}[fragile]{Boble sortering (Bubble sort)}
+    Input: En liste \\
+    Output: Listen sortert i stigende rekkefølge \\
+
+    \begin{python}
+def buble_sort(list):
+    for i in range(len(list) - 1):
+        for j in range(len(list) - i):
+            if list[j] > list[j+1]:
+                temp = list[j]
+                list[j] = list[j+1]
+                list[j+1] = temp
+    
+    return list
+    \end{python}
+\end{frame}
+
+\begin{frame}[fragile]{Innsettings sortering (Insertion sort)}
+    Input: En liste \\
+    Output: Listen sortert i stigende rekkefølge \\
+
+    \begin{python}
+def insertion_sort(list):
+    for i in range(1, len(list)):
+        j = 0
+        while list[i] > list[j]:
+            j += 1
+        m = list[i]
+        for k in range(i - j - 1):
+            list[i-k] = list[i-k-1]
+        list[j] = m
+    return list
+    \end{python}
+\end{frame}

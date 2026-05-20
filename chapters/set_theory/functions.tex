@@ -1,6 +1,6 @@
 \subsection{Funksjoner}
 \begin{frame}{Funksjoner}
-    Funksjoner kjenner vi fra INF100 i fjor. Nå skal vi formalisere dem litt mer.\\
+    Funksjoner kjenner vi fra INF100. Nå skal vi formalisere dem litt mer.\\
     \begin{columns}
         \begin{column}{0.5\textwidth}
             Fra nå av ser vi på datatyper som sett:
@@ -94,17 +94,13 @@ Med andre ord: hele kodomenet/outputsettet blir brukt og alt i $B$ har minst én
 \end{frame}
 
 \begin{frame}{Bijektivitet}
-En funksjon $f : A \rightarrow B$ er \emph{Bijektiv} om den er både injektiv og surjektiv.\\
+En funksjon $f : A \rightarrow B$ er \emph{bijektiv} om den er både injektiv og surjektiv.\\
     \pause
     Da finnes det en unik invers funksjon $f^{-1} : B \rightarrow A$ slik at 
     \begin{itemize}
-        \item $f^{-1} \circ f = id_A$
+        \item $\forall a \in A : f^{-1}(f(a)) = a$
         \pause
-        \item $f \circ f^{-1} = id_B$
-        \pause
-        \item $\forall a \in A : a = f^{-1}(f(a))$
-        \pause
-        \item $\forall b \in B : b = f(f^{-1}(b))$
+        \item $\forall b \in B : f(f^{-1}(b)) = b$
     \end{itemize}
 
     \pause
@@ -132,7 +128,7 @@ En funksjon $f : A \rightarrow B$ er \emph{Bijektiv} om den er både injektiv og
     \begin{itemize}
         \item Injektiv:  $\forall a_1, a_2 : f(a_1) = f(a_2) \rightarrow a_1 = a_2$.\\
         \item Surjektiv: $\forall b \exists a : f(a) = b$.\\
-        \item Bijektiv: begge de over \\
+        \item Bijektiv: begge over \\
     \end{itemize}
     \pause
     \begin{block}{Avgjør om de følgende funksjonene er injektive, surjektive, eller bijektive:}
@@ -142,7 +138,7 @@ En funksjon $f : A \rightarrow B$ er \emph{Bijektiv} om den er både injektiv og
                 $f(x) := x^2$\\[1mm]
                 \pause
                 $even : \mathbb{Z} \rightarrow $ Bool\\
-                $even(x) := x$ mod $2 == 0$\\[1mm]
+                $even(x) := (x$ mod $2 == 0)$\\[1mm]
                 \pause
                 $h : \mathbb{R} \rightarrow \mathbb{R}$\\
                 $h(x) := 2x + 1$\\[1mm]
