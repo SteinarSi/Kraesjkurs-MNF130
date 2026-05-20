@@ -1,4 +1,5 @@
 \subsection{Mengder}
+
 \begin{frame}{Sett / Mengder}
     Et sett, eller en mengde, er en slags liste av objekter, bortsett fra:\\
     \indent \hspace{3mm}    1. Det inneholder ingen duplikater\\
@@ -12,8 +13,8 @@
     
     \pause
     \begin{block}{Eksempel}
-        $1 \in \{1, 2, 3\}$ = T \\
-        $5 \in \{1, 2, 3\}$ = F
+        $1 \in \{1, 2, 3\} \equiv$ T \\
+        $5 \in \{1, 2, 3\} \equiv$ F
     \end{block}
 \end{frame}
 
@@ -23,41 +24,41 @@
     
     \begin{tabular}{c|l|c}
         Symbol & Navn & Innhold \\ \hline
-        $\mathbb{N}_0$ & Naturlige tall & $\{0, 1, 2, 3, ....\}$\\
+        $\mathbb{N}_0$ & Naturlige tall & $\{0, 1, 2, 3, \ldots\}$\\
         \pause
-        $\mathbb{N}_1$ & Naturlige tall & $\{1, 2, 3, ....\}$\\
+        $\mathbb{N}_1$ & Naturlige tall & $\{1, 2, 3, \ldots\}$\\
         \pause
         $\mathbb{N}$ & Naturlige tall & Enten $\mathbb{N}_0$ eller $\mathbb{N}_1$\\
         \pause
-        $\mathbb{Z}$ & Heltall & $\{... -2, -1, 0, 1, 2, 3, ....\}$\\
+        $\mathbb{Z}$ & Heltall & $\{\ldots, -2, -1, 0, 1, 2, 3, \ldots\}$\\
         \pause
-        $\mathbb{Q}$ & Rasjonale tall & $\{-3/2, 1/10, 4/5, 5/4, ....\}$\\
+        $\mathbb{Q}$ & Rasjonale tall & $\{\frac{-3}{2}, \frac{1}{10}, \frac{4}{5}, \frac{5}{4}, \ldots\}$\\
         \pause
-        $\mathbb{R}$ & Reelle tall & $\{\pi, e, 0.111111111..., -2\pi, .....\}$\\
+        $\mathbb{R}$ & Reelle tall & $\{\frac{1}{2}, \pi, e, 0.111111111\ldots, -2\pi, \ldots\}$\\
         \pause
         $\emptyset$ & Det tomme settet & $\{\}$
     \end{tabular}
 \end{frame}
 
 \begin{frame}[fragile]{Settbyggingsnotasjon}
-    Istedet for å manuelt skrive opp alle elementene i et sett, eller å bruke uformell \enquote{...}-notasjon, kan vi bruke setbyggingsnotasjon.
+    Istedet for å manuelt skrive opp alle elementene i et sett, eller å bruke uformell \enquote{$\ldots$}-notasjon, kan vi bruke setbyggingsnotasjon.
     \pause
     \begin{block}{Eksempler}
         $\{ x ~ | ~ x \in \mathbb{N}\}$ = $\mathbb{N}$\\
         \pause
-        $\{ x \cdot 2 ~ | ~ x \in \mathbb{N}\}$ = $\{0, 2, 4, 6, 8, ....\}$\\
+        $\{ x \cdot 2 ~ | ~ x \in \mathbb{N}\}$ = $\{0, 2, 4, 6, 8, \ldots\}$\\
         \pause
-        $\{x ~ | ~ x \in \mathbb{N}, ~ x$ mod $3 = 0 \} = \{0, 3, 6, 9, ...\}$\\
+        $\{x ~ | ~ x \in \mathbb{N}, ~ x$ mod $3 = 0 \} = \{0, 3, 6, 9, \ldots\}$\\
         \pause
-        $\{x/2 ~ | ~ x \in \mathbb{N}, ~ x$ mod $3 = 0\} = \{0, 1.5, 3, 4.5, ...\}$
+        $\{x/2 ~ | ~ x \in \mathbb{N}, ~ x$ mod $3 = 0\} = \{0, 1.5, 3, 4.5, \ldots\}$
     \end{block}
     \pause
     Det ser skummelt ut, men det er bare forløkker.
     \begin{python}
-[ x for x in range(100) ]
-[ x*2 for x in range(100) ]
-[ x for x in range(100) if x % 3 == 0 ]
-[ x/2 for x in range(100) if x % 3 == 0 ]
+        [ x for x in range(100) ]
+        [ x*2 for x in range(100) ]
+        [ x for x in range(100) if x \% 3 == 0 ]
+        [ x/2 for x in range(100) if x \% 3 == 0 ]
     \end{python}
 \end{frame} 
 
@@ -91,10 +92,10 @@
     \end{itemize}
     \pause
     \begin{block}{Eksempler}
-        $\{1\} \subseteq \{1, 2\}$ = T\\
-        $\{1\} \subseteq \{5\}$ = F\\
-        $\{a, b\} \subset \{a, b\}$ = F\\
-        $\{a, b\} \subseteq \{a, b\}$ = T
+        $\{1\} \subseteq \{1, 2\} \equiv T$\\
+        $\{1\} \subseteq \{5\} \equiv F$\\
+        $\{a, b\} \subset \{a, b\} \equiv F$\\
+        $\{a, b\} \subseteq \{a, b\} \equiv T$
     \end{block}
     \pause
     \centering
@@ -186,7 +187,8 @@ Vi har to sett $A$ og $B$, og vi får vite at $A - B = \emptyset$. Hva vet vi da
 
 \begin{frame}{Kardinalitet}
     Om $A$ er et sett, er $|A|$ antall elementer i settet, \textit{kardinaliteten}, eller \textit{lengden}.\\
-    To sett har samme kardinalitet om de har samme lengde.
+    To sett har samme kardinalitet om de har samme lengde.\\
+    Sett kan være endelige og uendelige.
     \begin{block}{Eksempler}
         $|\{a, b, c\}| = 3$ \\
         $|\{\}| = |\emptyset| = 0$\\

@@ -1,40 +1,43 @@
 \subsection{Proposisjoner}
+
 \begin{frame}{Proposisjoner}
-\begin{itemize}
-    \item En proposisjon er et uttrykk med en sannhetsverdi, som alltid er enten Sann (T) elller Usann (F).
-    \item Ofte setter vi dem i variabler, for å gjøre det lettere å lese.
-\end{itemize}
-\pause
-\begin{block}{Proposisjoner}
-    p := 2 < 3 \\
-    q := ''Månen er laget av ost''\\
-    r := ''MNF130 er et nyttig fag for informatikere''
-\end{block}
-\pause
-\begin{block}{Ikke proposisjoner}
-    ''Hva skal vi ha til middag i dag?''\\
-    x + y < z
-\end{block}
+    \begin{itemize}
+        \item En proposisjon er et uttrykk med en sannhetsverdi, som alltid er enten Sann (T) elller Usann (F).
+        \item Ofte setter vi dem i variabler, for å gjøre det lettere å lese.
+    \end{itemize}
+    \pause
+    \begin{block}{Proposisjoner}
+        $p :\iff 2 < 3$ \\
+        $q :\iff$ ``Månen er laget av ost''\\
+        $r :\iff $``MNF130 er et nyttig fag for informatikere''
+    \end{block}
+    \pause
+    \begin{block}{Ikke proposisjoner}
+        ``Hva skal vi ha til middag i dag?''\\
+        x + y < z
+    \end{block}
 \end{frame}
 
-\begin{frame}{$\lnot$, og sannhetstabeller}
-\begin{itemize}
-    \item Gitt en proposisjon $p$, kan vi representere den motsatte proposisjonen som $\lnot p$.
-    \item Vi kan tegne opp alle mulige verdier et slikt uttrykk kan ha i en tabell.
-\end{itemize}
-\pause
+\begin{frame}{$\lnot$ og sannhetstabeller}
+    \begin{itemize}
+        \item Gitt en proposisjon $p$, kan vi representere den motsatte proposisjonen som $\lnot p$.
+        \item Vi kan tegne opp alle mulige verdier et slikt uttrykk kan ha i en tabell.
+    \end{itemize}
+    \pause
 
-\begin{block}{Eksempler}
-    La $p := 2 < 3$. \\
-    $p$ = ''Det er sant at 2 er mindre enn 3'' \\
-    $\lnot p$ = ''Det er ikke sant at 2 er mindre enn 3''
-\end{block}
-\pause
-\begin{tabular}{c|c}
-$p$ & $\lnot p$ \\ \hline
-T & F \\
-F & T \\ \hline
-\end{tabular}
+    \begin{block}{Eksempler}
+        La $p :\iff 2 < 3$. \\
+        $p \iff$ ``Det er sant at 2 er mindre enn 3'' \\
+        $\lnot p \iff$ ``Det er ikke sant at 2 er mindre enn 3''
+    \end{block}
+    \pause
+    \begin{center}
+        \begin{tabular}{c|c}
+            $p$ & $\lnot p$ \\ \hline
+            T & F \\
+            F & T \\
+        \end{tabular}
+    \end{center}
 \end{frame}
 
 \begin{frame}{$\lor$ og $\land$}
@@ -42,18 +45,20 @@ F & T \\ \hline
         \item Vi kan slå sammen flere proposisjoner til et større uttrykk på mange forskjellige måter.
     \end{itemize}
     \begin{block}{Eksempel}
-        La $p$ := Jorden er flat, og $q$ := Månen er flat\\
-        $p \lor q$ = Jorden er flat \textbf{eller} månen er flat\\
-        $p \land q$ = Jorden er flat \textbf{og} månen er flat\\
+        La $p : \iff$ ``Jorden er flat'', og $q : \iff$ ``Månen er flat''\\
+        $p \lor q \iff$ ``Jorden er flat \textbf{eller} månen er flat''\\
+        $p \land q \iff$ ``Jorden er flat \textbf{og} månen er flat''\\
     \end{block}
     \pause
-    \begin{tabular}{c|c|c|c}
-        $p$ & $q$ & $p \lor q$ & $p \land q$ \\ \hline
-        T & T & T & T \\
-        T & F & T & F \\
-        F & T & T & F \\
-        F & F & F & F \\
-    \end{tabular}
+    \begin{center}
+        \begin{tabular}{c|c|c|c}
+            $p$ & $q$ & $p \lor q$ & $p \land q$ \\ \hline
+            T & T & T & T \\
+            T & F & T & F \\
+            F & T & T & F \\
+            F & F & F & F \\
+        \end{tabular}
+    \end{center}
 \end{frame}
 
 \begin{frame}{$\rightarrow$ og $\leftrightarrow$}
@@ -61,18 +66,42 @@ F & T \\ \hline
         \item En proposisjon kan implisere en annen proposisjon.
     \end{itemize}
     \begin{block}{Eksempel}
-        La $p$ := ''Det regner ute'', og $q$ := ''Bakken er våt''\\
-        $p \rightarrow q$ = ''Hvis det regner ute, blir bakken våt''\\
-        $p \leftrightarrow q$ = ''Det regner ute hvis og bare hvis bakken er våt''
+        La $p : \iff$ ``Det regner ute'', og $q : \iff$ ``Bakken er våt''\\
+        $p \rightarrow q \iff$ ``Hvis det regner ute, blir bakken våt''\\
+        $p \leftrightarrow q \iff$ ``Det regner ute hvis og bare hvis bakken er våt''
     \end{block}
     \pause
-    \begin{tabular}{c|c|c|c}
-        $p$ & $q$ & $p \rightarrow q$ & $p \leftrightarrow q$ \\ \hline
-        T & T & T & T \\
-        T & F & F & F \\
-        F & T & T & F \\
-        F & F & T & T \\
-    \end{tabular}
+    \begin{center}
+        \begin{tabular}{c|c|c|c}
+            $p$ & $q$ & $p \rightarrow q$ & $p \leftrightarrow q$ \\ \hline
+            T & T & T & T \\
+            T & F & F & F \\
+            F & T & T & F \\
+            F & F & T & T \\
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Konvers, kontrapositiv, og invers}
+    \begin{itemize}
+        \item Vi kan lage tre nye implikasjoner fra en implikasjon $p \rightarrow q$\\
+    \end{itemize}
+    \pause
+    \begin{center}
+        \begin{tabular}{c|c}
+            Navn & Implikasjon \\ \hline
+            Converse & $q \rightarrow p$ \\
+            Contrapositive & $\lnot q \rightarrow \lnot p$ \\
+            Inverse & $\lnot p \rightarrow \lnot q$ \\
+        \end{tabular}
+    \end{center}
+    \begin{block}{Eksempel}
+        La $p : \iff$''Det regner ute'', og $q : \iff$ ''Bakken er våt''\\
+        $p \rightarrow q \iff$ ''Hvis det regner ute, blir bakken våt''\\
+        $q \rightarrow p \iff$ ''Hvis bakken er våt, så regner det ute''\\
+        $\lnot q \rightarrow \lnot p \iff$ ''Hvis bakken ikke er våt, så regner det ikke ute''\\
+        $\lnot p \rightarrow \lnot q \iff$ ''Hvis det ikke regner ute, blir bakken ikke våt''\\
+    \end{block}
 \end{frame}
 
 \begin{frame}{Egenskaper}
@@ -84,11 +113,13 @@ F & T \\ \hline
         \item Et uttrykk er \emph{tilfredsstilbart} om det finnes en kombinasjon av variabler slik at uttrykket blir T.
     \end{itemize}
     \pause
-    \begin{tabular}{c|c|c|c|c}
-         $p$ & $\lnot p$ & $\lnot \lnot p$ & $p \lor \lnot p$ & $p \land \lnot p$\\ \hline
-         T & F & T & T & F\\
-         F & T & F & T & F
-    \end{tabular}
+    \begin{center}
+        \begin{tabular}{c|c|c|c|c}
+            $p$ & $\lnot p$ & $\lnot \lnot p$ & $p \lor \lnot p$ & $p \land \lnot p$\\ \hline
+            T & F & T & T & F\\
+            F & T & F & T & F
+        \end{tabular}
+    \end{center}
     \pause
     \begin{itemize}
         \item Konklusjon 1: $p \equiv \lnot \lnot p$, og er logisk ekvivalente
@@ -220,13 +251,13 @@ F & T \\ \hline
         \item Gitt et predikat og riktig antall argumenter, kan vi evaluere det som en vanlig proposisjon.
     \end{itemize}
     \begin{block}{Eksempler på predikater}
-        $P(x, y, z) = x + y < z$\\
-        $Q(s)$ = $s$ contains $'a'$
+        $P(x, y, z) : \iff x + y < z$\\
+        $Q(s) : \iff $ ``The string $s$ contains the letter \enquote{a}''
     \end{block}
     \pause
     \begin{block}{Eksempler på evaluering}
-        $P(1, 2, 3) = 1 + 2 < 3 = 3 < 3 = F$ \\ 
-        $Q($\enquote{Steinar}$) = $\enquote{Steinar} contains $'a' = T$
+        $P(1, 2, 3) \iff 1 + 2 < 3 \iff 3 < 3 \equiv F$ \\ 
+        $Q($\enquote{Carina}$) \iff $ ``The string \enquote{Carina} contains the letter \enquote{a}''$ \equiv T$
     \end{block}
 
 \end{frame}

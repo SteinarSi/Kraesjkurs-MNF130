@@ -1,4 +1,5 @@
 \subsection{Kvantorer}
+
 \begin{frame}{Kvantorer (Quantifiers)}
     \begin{itemize}
         \item Ofte vil vi si noe om et predikat $P(x)$, men for flere potensielle $x$ samtidig.
@@ -42,6 +43,30 @@ def exists(p, S):
     \end{itemize}
 \end{frame}
 
+\begin{frame}{De Morgan dukker opp igjen}
+Det viser seg at De Morgan's lover også fungerer på kvantorer.\\
+    \begin{columns}
+    \begin{column}{0.48\textwidth}
+    \begin{itemize}
+        \item $\lnot \forall x : P(x)$ \\
+        $\equiv \lnot [P(x_1) \land P(x_2) \land \ldots \land P(x_n)]$\\
+        $\equiv \lnot P(x_1) \lor \lnot P(x_2) \lor \ldots \lor \lnot P(x_n)$\\ $\equiv \exists x : \lnot P(x)$
+        \pause
+        \item $\lnot \exists x : P(x)$\\
+        $\equiv \lnot [P(x_1) \lor P(x_2) \lor \ldots \lor P(x_n)]$\\
+        $\equiv \lnot P(x_1) \land \lnot P(x_2) \land \ldots \land \lnot P(x_n)$\\ 
+        $\equiv \forall x : \lnot P(x)$
+    \end{itemize}      
+    \end{column}
+    \pause
+    \begin{column}{0.45\textwidth}
+        \includegraphics[scale=0.3]{images/Always a bigger fish.jpeg}
+        \pause
+        \includegraphics[scale=1]{images/bigger fish.PNG}
+    \end{column}
+    \end{columns}
+\end{frame}
+
 \begin{frame}{Nøstede kvantorer (Nested quantifiers)}
     \begin{itemize}
         \item Ofte vil vi si noe om mange kombinasjoner av variabler samtidig.
@@ -53,32 +78,8 @@ def exists(p, S):
     \begin{block}{Eksempler}
         $\forall x \forall y : (x^2 + y^2 \geq 0) \equiv \forall x, y : (x^2 + y^2 \geq 0)$ \\
         \pause
-        $\forall x \exists y : (x \cdot y = 1) \equiv$ ''For alle x eksisterer det en y slik at $x \cdot y = 1$'' \\
+        $\forall x \exists y : (x \cdot y = 1) \equiv$ ``For alle x eksisterer det en y slik at $x \cdot y = 1$'' \\
         \pause
-        $\exists x \forall y : (x^2 \leq y^2) \equiv$ ''Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
+        $\exists x \forall y : (x^2 \leq y^2) \equiv$ ``Det eksisterer en x slik at for alle y er $x^2 \leq y^2$''\\
     \end{block}
-\end{frame}
-
-\begin{frame}{De Morgan dukker opp igjen}
-Det viser seg at De Morgan's lover også fungerer på kvantorer.\\
-    \begin{columns}
-    \begin{column}{0.48\textwidth}
-    \begin{itemize}
-        \item $\lnot \forall x : P(x)$ \\
-        $\equiv \lnot [P(x_1) \land P(x_2) \land ... \land P(x_n)]$\\
-        $\equiv \lnot P(x_1) \lor \lnot P(x_2) \lor ... \lor \lnot P(x_n)$\\ $\equiv \exists x : \lnot P(x)$
-        \pause
-        \item $\lnot \exists x : P(x)$\\
-        $\equiv \lnot [P(x_1) \lor P(x_2) \lor ... \lor .. P(x_n)]$\\
-        $\equiv \lnot P(x_1) \land \lnot P(x_2) \land ... \land \lnot P(x_n)$\\ 
-        $\equiv \forall x : \lnot P(x)$
-    \end{itemize}      
-    \end{column}
-    \pause
-    \begin{column}{0.45\textwidth}
-        \includegraphics[scale=0.3]{images/Always a bigger fish.jpeg}
-        \pause
-        \includegraphics[scale=1]{images/bigger fish.PNG}
-    \end{column}
-    \end{columns}
 \end{frame}
