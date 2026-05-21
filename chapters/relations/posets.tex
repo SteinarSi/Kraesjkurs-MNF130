@@ -1,0 +1,32 @@
+\subsection{Posets}
+\begin{frame}{Partial ordering}
+    Ligner på ekvivalensrelasjoner, men er anti-symmetrisk istedenfor symmetrisk\\
+    Mengder med en partial ordering relasjon på seg kalles for \emph{posets}\\
+
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            En ekvivalenserelasjon:
+            \begin{tikzcd}[ampersand replacement=\&]
+                a \arrow[d, bend right] \arrow[loop, distance=2em, in=125, out=55] \arrow[r, bend left]
+                \& b \arrow[loop, distance=2em, in=125, out=55] \arrow[ld, bend right] \arrow[l, bend left]
+                \& c \arrow[loop, distance=2em, in=125, out=55] \\
+                d \arrow[ru, bend right] \arrow[u, bend right] \arrow[loop, distance=2em, in=305, out=235]
+                \& e \arrow[r, bend right] \arrow[loop, distance=2em, in=305, out=235]
+                \& f \arrow[loop, distance=2em, in=305, out=235] \arrow[l, bend right]
+            \end{tikzcd}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            En partial order relasjon:
+            \begin{tikzcd}[ampersand replacement=\&]
+                a \arrow[d] \arrow[loop, distance=2em, in=125, out=55] \arrow[r]
+                \& b \arrow[loop, distance=2em, in=125, out=55] \arrow[ld]
+                \& c \arrow[loop, distance=2em, in=125, out=55] \\
+                d \arrow[loop, distance=2em, in=305, out=235]
+                \& e \arrow[r] \arrow[loop, distance=2em, in=305, out=235]
+                \& f \arrow[loop, distance=2em, in=305, out=235] 
+            \end{tikzcd}
+        \end{column}
+    \end{columns}
+    To elementer kalles for \emph{sammenlignbar} hvis de har en pil mellom seg.\\
+    Hvis alle to elementer kan sammenlignes, snakker vi om en \emph{total ordering}
+\end{frame}

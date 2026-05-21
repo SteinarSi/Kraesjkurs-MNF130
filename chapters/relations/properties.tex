@@ -196,17 +196,18 @@ En relasjon $R$ er \emph{refleksiv} hvis $\forall a : ((a, a) \in R)$.\\
         \begin{column}{0.4\textwidth}
             Ikke en ekvivalenserelasjon:
             \begin{tikzcd}
-                a \arrow[d, bend right]            & b                                                      & e \\
-                c \arrow[ru] \arrow[u, bend right] & d \arrow[r] \arrow[loop, distance=2em, in=125, out=55] & c
+                a \arrow[d, bend right]            & b                                                      & c \\
+                d \arrow[ru] \arrow[u, bend right] & e \arrow[r] \arrow[loop, distance=2em, in=125, out=55] & f
             \end{tikzcd}
         \end{column}
         \pause
         \begin{column}{0.4\textwidth}
             En ekvivalenserelasjon:
             \begin{tikzcd}
-                a \arrow[d, bend right] \arrow[loop, distance=2em, in=125, out=55] \arrow[r, bend left]    & b \arrow[loop, distance=2em, in=125, out=55] \arrow[ld, bend right] \arrow[l, bend left] & e \arrow[loop, distance=2em, in=125, out=55]                        \\
-                c \arrow[ru, bend right] \arrow[u, bend right] \arrow[loop, distance=2em, in=305, out=235] & d \arrow[r, bend right] \arrow[loop, distance=2em, in=305, out=235]                      & c \arrow[loop, distance=2em, in=305, out=235] \arrow[l, bend right]
+                a \arrow[d, bend right] \arrow[loop, distance=2em, in=125, out=55] \arrow[r, bend left]    & b \arrow[loop, distance=2em, in=125, out=55] \arrow[ld, bend right] \arrow[l, bend left] & c \arrow[loop, distance=2em, in=125, out=55]                        \\
+                d \arrow[ru, bend right] \arrow[u, bend right] \arrow[loop, distance=2em, in=305, out=235] & e \arrow[r, bend right] \arrow[loop, distance=2em, in=305, out=235]                      & f \arrow[loop, distance=2em, in=305, out=235] \arrow[l, bend right]
             \end{tikzcd}
         \end{column}
     \end{columns}
+    Vi har nå delt opp settet $A = \{a, b, c, d, e, f\}$ i tre \emph{ekvivalensklasser} $[a]_R =\{a, b, d\}, [c]_R =\{c\}, [e]_R =\{e, f\}$
 \end{frame}

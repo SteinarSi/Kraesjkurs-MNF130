@@ -9,10 +9,10 @@
             \end{itemize}
         
             \pause
-            Siden $P(0)$ stemmer, må $P(1)$ stemme, og\\
-            Siden $P(1)$ stemmer, må $P(2)$ stemme, og\\
-            Siden $P(2)$ stemmer, må $P(3)$ stemme, og\\
-            ...\\
+            Siden $P(0)$ stemmer, må $P(1)$ stemme óg\\
+            Siden $P(1)$ stemmer, må $P(2)$ stemme óg\\
+            Siden $P(2)$ stemmer, må $P(3)$ stemme óg\\
+            \ldots\\
             Siden $P(k)$ stemmer, må $P(k+1)$ stemme.\\[1.5mm]
         
             \pause
@@ -27,7 +27,7 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Oppgave: vis at $\sum_{i=0}^{n} i = 0 + 1 + 2 + ... + n = \frac{n(n+1)}{2}$.}
+\begin{frame}{Oppgave: vis at $\sum_{i=0}^{n} i = 0 + 1 + 2 + \ldots + n = \frac{n(n+1)}{2}$.}
     \pause    
     Vi lar $P(k) := \sum_{i=0}^{k} i = \frac{k(k+1)}{2}$\\
 
@@ -43,7 +43,7 @@
     $P(k+1): \sum_{i=0}^{k+1} i = \frac{(k+1)((k+1)+1)}{2}$ \pause $ = \frac{(k+1)(k+2)}{2}$\\
 
     \pause
-    $\sum_{i=0}^{k+1} i = 0 + 1 + 2 + ... + k + (k+1)$ \pause $= (\sum_{i=0}^{k} i )+ (k+1)$\\
+    $\sum_{i=0}^{k+1} i = 0 + 1 + 2 + \ldots + k + (k+1)$ \pause $= (\sum_{i=0}^{k} i )+ (k+1)$\\
     \pause
     $=\frac{k(k+1)}{2} + k + 1$\\
     \pause
@@ -55,7 +55,7 @@
 \end{frame}
 
 \begin{frame}{Sterk induksjon}
-    Dette er veldig likt. Men istedet for å anta $P(k)$, antar man $P(0) \land P(1) \land .... \land P(k)$.\\
+    Dette er veldig likt. Men istedet for å anta $P(k)$, antar man $P(0) \land P(1) \land \ldots \land P(k)$.\\
     Du kan tenke helt likt på disse to formene for induksjon, eneste forskjellen er at du kan anta litt mer i induksjonssteget.\\
 
     Hvis du allerede forstår induksjon, trenger du ikke definisjon for sterk induksjon. Du kan gjørde det med intuisjon.
@@ -65,9 +65,9 @@
 \begin{frame}{Rekursive funksjoner}
     En rekursiv funksjon er en funksjon som refererer til seg selv.
     \pause
-    \begin{block}{fakultet}
-        $0! := 1$ \\
-        $n! := n \cdot (n-1)!$
+    \begin{block}{Fakultet}
+        Basis step: $0! := 1$ \\
+        Recursive step: $n! := n \cdot (n-1)!$
     \end{block}    
     \pause 
     $3! = 3 \cdot ~ 2!$\\
@@ -100,7 +100,7 @@
     \begin{block}{Eksempel}
         Basissteg: $7 \in \mathbb{S}$.\\
         Rekursivt steg: $a \in \mathbb{S} \rightarrow 10a \in \mathbb{S}$\\
-        $\mathbb{S} = \{7, 70, 700, 7000, 70000, ....\}$
+        $\mathbb{S} = \{7, 70, 700, 7000, 70000, \ldots\}$
     \end{block}
 \end{frame}
 
@@ -157,29 +157,31 @@
     Dermed kan vi konkludere med at $\forall a, b \in \mathbb{T} : a \geq b$. \qed
 \end{frame}
 
-\begin{frame}[fragile]{Strukturell induksjon i praksis}
-    \begin{lstlisting}[language=Java]
-public class SimpleList<T> {
-    private final T[] content;
-    private int size;
+% Jeg tror dette er for skremmende
 
-    public SimpleList(int capacity) {
-        content = (T[]) new Object[capacity];
-        size = 0;
-    }
-    public void add(T element) {
-        content[size] = element;
-        size++;
-    }
-    public T get(int index) { 
-        return content[index]; 
-    }
-    public int size() { 
-        return size; 
-    }
-}
-    \end{lstlisting}
+% \begin{frame}[fragile]{Strukturell induksjon i praksis}
+%     \begin{lstlisting}[language=Java]
+% public class SimpleList<T> {
+%     private final T[] content;
+%     private int size;
 
-    \pause
-    Spørsmål: er \pyth{.size()} korrekt?
-\end{frame}
+%     public SimpleList(int capacity) {
+%         content = (T[]) new Object[capacity];
+%         size = 0;
+%     }
+%     public void add(T element) {
+%         content[size] = element;
+%         size++;
+%     }
+%     public T get(int index) { 
+%         return content[index]; 
+%     }
+%     public int size() { 
+%         return size; 
+%     }
+% }
+%     \end{lstlisting}
+
+%     \pause
+%     Spørsmål: er \pyth{.size()} korrekt?
+% \end{frame}

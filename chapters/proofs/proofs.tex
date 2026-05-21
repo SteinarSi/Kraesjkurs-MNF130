@@ -1,5 +1,183 @@
 \subsection*{Beviser}
 
+\begin{frame}{The art of deduction}
+    Et \emph{argument} er en rekke \emph{premisser} som ender i en \emph{konklusjon}.\\
+    \pause
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{block}{Eksempel}
+                Premiss 1: Hvis Brann taper kampen blir jeg trist.\\
+                Premiss 2: Brann tapte kampen.\\
+                Konklusjon: Jeg er trist.
+            \end{block}
+            \pause
+            Notasjon:
+            \[
+                \begin{array}{ r l }
+                    & p \rightarrow q \\
+                    & p \\
+                    \cline{2-2}
+                    \therefore & q
+                \end{array}
+            \]
+        \end{column}
+        \pause
+        \begin{column}{0.2\textwidth}
+            \includegraphics[scale=0.07]{images/sherlock.png}
+        \end{column}
+    \end{columns}
+    \pause
+    Når konklusjonen MÅ være sant hvis alle premissene er sanne, snakker vi om et \emph{gyldig} argument.
+\end{frame}
+
+\begin{frame}{Inferensregler}
+    \pause
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{tabular}{>{\footnotesize}p{1.6cm} | >{\scriptsize}p{2.8cm} | >{\footnotesize}p{1.6cm}}
+            \small{\textbf{Regel}} & \small{\textbf{Tautologi}} & \small{\textbf{Navn}} \\ \hline
+            \noalign{\vspace{3pt}}
+            $\begin{array}{ r l }
+                    & p \rightarrow q \\
+                    & p \\
+                    \cline{2-2}
+                    \therefore & q
+             \end{array}$
+            & $(p \land (p \rightarrow q)) \rightarrow q$
+            & Modus ponens\\ \noalign{\vspace{3pt}}  \hline
+            \noalign{\vspace{3pt}}
+            $\begin{array}{ r l }
+                & \lnot q \\
+                & p \rightarrow q \\
+                \cline{2-2}
+                \therefore & \lnot p
+            \end{array}$
+            & $(\lnot q \land (p \rightarrow q)) \rightarrow \lnot p$
+            & Modus tollens\\ \noalign{\vspace{3pt}}  \hline
+            \noalign{\vspace{3pt}}
+            $\begin{array}{ r l } & p \rightarrow q \\
+                & q \rightarrow r \\
+                \cline{2-2}
+                \therefore & p \rightarrow r
+            \end{array}$
+            & $((p \rightarrow q) \land (q \rightarrow r)) \rightarrow (p \rightarrow r)$
+            & Hypothetical syllogism \\ \noalign{\vspace{3pt}} \hline
+            \noalign{\vspace{3pt}}
+            $\begin{array}{ r l }
+                & p \lor q \\
+                & \lnot p \\
+                \cline{2-2}
+                \therefore & q
+            \end{array}$
+            & $(p \lor q \land \lnot p) \rightarrow q$
+            & Disjunctive syllogism \\ \noalign{\vspace{3pt}}  \hline
+            \noalign{\vspace{3pt}}
+        \end{tabular}
+        \end{column}
+        \pause
+        \begin{column}{0.48\textwidth}
+            \begin{tabular}{>{\footnotesize}p{1.6cm} | >{\scriptsize}p{2.8cm} | >{\footnotesize}p{1.6cm}}
+            \small{\textbf{Regel}} & \small{\textbf{Tautologi}} & \small{\textbf{Navn}} \\ \hline
+            \noalign{\vspace{3pt}}
+            $\begin{array}{ r l }
+                & p \\
+                \cline{2-2}
+                \therefore & p \lor q
+            \end{array}$
+            & $p \rightarrow (p \lor q)$
+            & Addition\\ \noalign{\vspace{3pt}}  \hline
+            \noalign{\vspace{3pt}}
+            $\begin{array}{ r l }
+                & p \land q \\
+                \cline{2-2}
+                \therefore & p
+            \end{array}$
+            & $(p \land q) \rightarrow p$
+            & Simplification\\ \noalign{\vspace{3pt}} \hline
+            \noalign{\vspace{3pt}}
+            $\begin{array}{ r l }
+                & p \\
+                & q \\
+                \cline{2-2}
+                \therefore & p \land q
+            \end{array}$
+            & $((p) \land (q)) \rightarrow (p \land q)$
+            & Conjunction \\ \noalign{\vspace{3pt}} \hline
+            \noalign{\vspace{3pt}}
+            $\begin{array}{ r l }
+                    & p \lor q \\
+                    & \lnot p \lor r \\
+                    \cline{2-2}
+                    \therefore & q \lor r
+                \end{array}$
+            & $((p \lor q) \land (\lnot p \lor r)) \rightarrow (q \lor r)$
+            & Resolution \\ \noalign{\vspace{3pt}}  \hline
+            \noalign{\vspace{3pt}}
+        \end{tabular}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Inferensregler for kvantorer}
+    \pause
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{tabular}{>{\footnotesize}m{3.5cm} | >{\small}m{2cm}}
+                \textbf{Regel}& \textbf{Navn} \\ \hline
+                \noalign{\vspace{3pt}}
+                $\begin{array}{ r l }
+                    & \forall x P(x) \\
+                    \cline{2-2}
+                    \therefore & P(c)
+                \end{array}$
+                & Universal \newline instantiation\\ \noalign{\vspace{3pt}}  \hline
+                \noalign{\vspace{3pt}}
+                $\begin{array}{ r l }
+                    & P(c) \text{ for an arbitrary } c\\
+                    \cline{2-2}
+                    \therefore & \forall x P(x)
+                \end{array}$
+                & Universal \newline generalization\\ \noalign{\vspace{3pt}} \hline
+                \noalign{\vspace{3pt}}
+                $\begin{array}{ r l }
+                    & \exists x P(x) \\
+                    \cline{2-2}
+                    \therefore & P(c) \text{ for some element } c
+                \end{array}$
+                & Existential \newline instantiation \\ \noalign{\vspace{3pt}} \hline
+                \noalign{\vspace{3pt}}
+                $\begin{array}{ r l }
+                        & P(c) \text{ for some element } c \\
+                        \cline{2-2}
+                        \therefore & \exists x P(x)
+                    \end{array}$
+                & Existential \newline generalization \\ \noalign{\vspace{3pt}}  \hline
+                \noalign{\vspace{3pt}}
+            \end{tabular}
+        \end{column}
+        \pause
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Eksempel 1}
+                Premiss: Alle studenter som er på kræsjkurs kommer til å stå på eksamen.\\
+                Konklusjon: Melissa kommer til å stå på eksamen.
+            \end{block}
+            \pause
+            \begin{block}{Eksempel 2}
+                Premiss: Helena får A på eksamen.\\
+                Konklusjon: Det finnes en student som får A på eksamen.
+            \end{block}
+        \end{column}
+    \end{columns}
+    \vspace{5pt}
+    Det er bare unødvendig kompliserte navn for enkle konsepter!
+\end{frame}
+
+\begin{frame}{Don't fall for the fallacies!}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/penguin logic.png}
+    \end{center}
+\end{frame}
+
 \begin{frame}{Beviser}
     Gitt noen premisser, vis at det garanterer en konklusjon.\\
 
@@ -54,7 +232,7 @@
     Dette er ofte de enkleste bevisene. Hvis du har formler du bare må knytte sammen, forsøk det først.\\
 
     \pause
-    Vi gjorde nettopp et direkte bevis: $p \iff$ "$a$ og $b$ er oddetall", $q \iff$ "$a+b$ er et partall", og vi viste at $p \rightarrow q$.\\
+    Vi gjorde nettopp et direkte bevis: $p =$ ``$a$ og $b$ er oddetall'', $q =$ ``$a+b$ er et partall'', og vi viste at $p \rightarrow q$.\\
 
     \pause
     Siden $p \rightarrow q \equiv \lnot q \rightarrow \lnot p$, kan vi også bevise det 'baklengs': om konklusjon er usann, må premisset også være usannt.
@@ -157,7 +335,7 @@
         \pause
         1900 mod 4 = 0 \checkmark \\
         \pause
-        {[... de neste 30 linjene er trivielle og etterlatt som en oppgave for leseren ...]}\\
+        {[\ldots de neste 30 linjene er trivielle og etterlatt som en oppgave for leseren \ldots]}\\
         2024 mod 4 = 0 \checkmark \qed
     \end{block}
     \pause
